@@ -31,11 +31,16 @@ h5py>=3.2.1
 torchvision>=0.10.0
 argparse>=1.1
 ```
+To install requirements:
+```angular2html
+pip install -r requirements.txt
+```
+
 
 ## Installation
 
 ```
-python setup.py
+pip install -r requirements.txt
 
 cd ./dataset
 
@@ -48,6 +53,19 @@ python predict.py
 ```
 
 <br/>
+
+## Training
+
+To train the model(s) in the paper, run this command:
+```
+python train.py
+```
+
+## Pre-trained Models
+
+You can download pretrained models here:
+
+## Results
 
 ## Citation
 

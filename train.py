@@ -49,6 +49,7 @@ def train_net(
         data_dir: str = os.getcwd()
 
 ):
+    # write results to checkpoint
     dir_checkpoint = Path('./' + direction + '_checkpoints/')
     with open(os.path.join(
             data_dir + "/"+direction + "_checkpoints/",
