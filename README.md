@@ -1,22 +1,74 @@
 # EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras
 
 ## Summary
-
+[[todo]]:结果的图像化，方法过程
 <br/>
 
 ## Dataset
 
 You can download the data from  xxx ,which consists of
 
-- Data_dvs :
+- raw_data
   
-  From user1 to user48, all eye tracking data collected using event cameras, including data from left and right eyes, for each user including four sessions.
-- Data_dvs_predict:
+  Data_dvs : From user1 to user48, all eye tracking data collected using event cameras, including data from left and right eyes, for each user including four sessions.
+  ```
   
-  Using the algorithm, estimated pupil images were obtained from the grayscale images for each user's session 102, 201, and 202.
-- Data_tobii:
+  ```
   
-  Eye tracking data collected using Tobii
+  Data_dvs_predict: Using the algorithm, estimated pupil images were obtained from the grayscale images for each user's session 102, 201, and 202.
+  ```
+  Data_dvs_predict
+  ├─user1
+  │  └─session_1
+  │      ├─left
+  │      │  ├─session_1_0_1
+  │      │  │  └─events
+  │      │  │      └─predict
+  │      │  ├─session_1_0_2
+  │      │  │  └─events
+  │      │  │      └─predict
+  │      │  ├─session_2_0_1
+  │      │  │  └─events
+  │      │  │      └─predict
+  │      │  └─session_2_0_2
+  │      │      └─events
+  │      │          └─predict
+  │      └─right
+  │          ├─session_1_0_1
+  │          │  └─events
+  │          │      └─predict
+  │          ├─session_1_0_2
+  │          │  └─events
+  │          │      └─predict
+  │          ├─session_2_0_1
+  │          │  └─events
+  │          │      └─predict
+  │          └─session_2_0_2
+  │              └─events
+  │                  └─predict
+  ```
+  
+  Data_tobii: Eye tracking data collected using Tobii
+  ```
+  Data_tobii
+  ├─user1
+  │  ├─session_1_0_0
+  │  │  └─meta
+  │  ├─session_1_0_1
+  │  │  └─meta
+  │  ├─session_1_0_2
+  │  │  └─meta
+  │  ├─session_2_0_0
+  │  │  └─meta
+  │  ├─session_2_0_1
+  │  │  └─meta
+  │  └─session_2_0_2
+  │      └─meta
+  ```
+
+- processed_data
+  
+  Data_Dvs_labelled_with_mask: Use the code in '/matlab_data_processing' to label the position of the pupils in frames captured by the event camera, and save the labels as an hdf5 file.
 
 <br/>
 
@@ -52,7 +104,7 @@ python train.py
 python predict.py
 ```
 
-<br/>
+[//]: # (<br/>)
 
 ## Training
 
