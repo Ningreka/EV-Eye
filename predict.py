@@ -66,6 +66,7 @@ def get_args():
 
     parser.add_argument('--data_dir', type=str, default=os.getcwd())
     parser.add_argument('--direction', type=str, default="right")
+    parser.add_argument('--device', type=str, default='cpu', help='Device to run the program on (cpu / cuda)')
     return parser.parse_args()
 
 
@@ -85,12 +86,13 @@ def mask_to_image(mask: np.ndarray):
 
 if __name__ == '__main__':
     args = get_args()
+    device = args.device
     userlist = [u for u in range(1, 49)]
     orders = ['1_0_1','1_0_2','2_0_1','2_0_2']
     for user in userlist:
         print(user)
         for order in orders:
-            origin_data_dir = args.data_dir + '/dataset/raw_data/Data_dvs/user' + str(
+            origin_data_dir = args.data_dir + '/dataset/raw_data/Data_davis/user' + str(
                 user) + args.direction + '/session_'+order+'/events/'
 
             assert os.path.exists(origin_data_dir), "please check your data directory"
@@ -100,24 +102,22 @@ if __name__ == '__main__':
             paths = glob.glob(os.path.join(origin_data_dir, 'frames/', '*.png'))
             origin_paths.extend(paths)
 
-            target_data_dir = args.data_dir + '/dataset/raw_data/Data_dvs_predict/user' + str(
-                user) +  args.direction + '/session_'+order+'/events/'
+            target_data_dir = args.data_dir + '/dataset/processed_data/Data_davis_predict/user' + str(
+                user) +  args.direction + '/session_'+order
 
             assert os.path.exists(origin_data_dir), "please check your data directory"
 
-            target_path = (os.path.join(target_data_dir, 'predict/'))
+            target_path = (os.path.join(target_data_dir, '/predict/'))
             print(target_path)
             if not os.path.exists(target_path):
                 os.makedirs(target_path)
 
             net = UNet(n_channels=1, n_classes=2, bilinear=args.bilinear)
 
-            device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+
             logging.info(f'Loading model {args.model}')
             logging.info(f'Using device {device}')
-            device = "cuda:1"
             net.to(device=device)
-
             model_dir = args.data_dir + '/' + args.direction + '_checkpoints/user' + str(
                 user) + '.pth'
 

@@ -10,65 +10,84 @@ You can download the data from  xxx ,which consists of
 
 - raw_data
   
-  Data_dvs : From user1 to user48, all eye tracking data collected using event cameras, including data from left and right eyes, for each user including four sessions.
+  Data_davis : From user1 to user48, all eye tracking data collected using event cameras, including data from left and right eyes, for each user including four sessions.
   ```
-  
-  ```
-  
-  Data_dvs_predict: Using the algorithm, estimated pupil images were obtained from the grayscale images for each user's session 102, 201, and 202.
-  ```
-  Data_dvs_predict
+  ─Data_davis
   ├─user1
-  │  └─session_1
-  │      ├─left
-  │      │  ├─session_1_0_1
-  │      │  │  └─events
-  │      │  │      └─predict
-  │      │  ├─session_1_0_2
-  │      │  │  └─events
-  │      │  │      └─predict
-  │      │  ├─session_2_0_1
-  │      │  │  └─events
-  │      │  │      └─predict
-  │      │  └─session_2_0_2
-  │      │      └─events
-  │      │          └─predict
-  │      └─right
-  │          ├─session_1_0_1
-  │          │  └─events
-  │          │      └─predict
-  │          ├─session_1_0_2
-  │          │  └─events
-  │          │      └─predict
-  │          ├─session_2_0_1
-  │          │  └─events
-  │          │      └─predict
-  │          └─session_2_0_2
-  │              └─events
-  │                  └─predict
+  │  ├─left
+  │  │  ├─session_1_0_1
+  │  │  │  ├─events
+  │  │  │  └─frames
+  │  │  ├─session_1_0_2
+  │  │  │  ├─events
+  │  │  │  └─frames
+  │  │  ├─session_2_0_1
+  │  │  │  ├─events
+  │  │  │  └─frames
+  │  │  └─session_2_0_2
+  │  │      ├─events
+  │  │      └─frames
+  │  └─right
+  │      ├─session_1_0_1
+  │      │  ├─events
+  │      │  └─frames
+  │      ├─session_1_0_2
+  │      │  ├─events
+  │      │  └─frames
+  │      ├─session_2_0_1
+  │      │  ├─events
+  │      │  └─frames
+  │      └─session_2_0_2
+  │          ├─events
+  │          └─frames
+  ```
+  
+  Data_davis_labelled_with_mask: Use the code in '/matlab_data_processing' to label the position of the pupils in frames captured by the event camera, and save the labels as an hdf5 file.
+  ```
+  ─Data_davis_labelled_with_mask
+  ├─left
+  │  ├─user1_session_1_0_2.h5
+  │  │─user1_session_2_0_1.h5
+  │  ..........
+  ├─right
+  │  ├─user1_session_1_0_2.h5
+  │  │─user1_session_2_0_1.h5
+  │  ..........
   ```
   
   Data_tobii: Eye tracking data collected using Tobii
   ```
-  Data_tobii
-  ├─user1
-  │  ├─session_1_0_0
-  │  │  └─meta
+  -Data_tobii
+  ├─ user1 
+  │  ├─tobiisend.txt
+  │  ├─ tobiittl.txt
   │  ├─session_1_0_1
-  │  │  └─meta
-  │  ├─session_1_0_2
-  │  │  └─meta
-  │  ├─session_2_0_0
-  │  │  └─meta
-  │  ├─session_2_0_1
-  │  │  └─meta
-  │  └─session_2_0_2
-  │      └─meta
+  │        ├─diameter.csv
+  │        ├─diameter.txt
+  │        ├─eventdata
+  │        ├─eventdata.gz
+  │        ├─gazedata
+  │        ├─gazedata.gz
+  │        ├─gazedata.txt
+  │        ├─imudata
+  │        ├─imudata.gz
+  │        ├─recording.g3
+  │        ├─scenevideo.mp4
+  │        ├─snap0.jpg
+  │        ├─meta
   ```
 
 - processed_data
   
-  Data_Dvs_labelled_with_mask: Use the code in '/matlab_data_processing' to label the position of the pupils in frames captured by the event camera, and save the labels as an hdf5 file.
+  Data_davis_predict: 
+  Using the algorithm, estimated pupil images were obtained from the grayscale images for each user's session 102, 201, and 202.
+
+  Frame_event_pupil_track_result:
+  
+  Pixel_error_evaluation:
+  
+  Pre-trained_models:
+
 
 <br/>
 

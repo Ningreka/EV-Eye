@@ -49,6 +49,12 @@ def train_net(
         data_dir: str = os.getcwd()
 
 ):
+    save_checkpoint = data_dir+"/"+direction + '_checkpoints'
+
+    if not os.path.exists(save_checkpoint):
+        os.makedirs(save_checkpoint)
+
+    assert os.path.isdir( data_dir +'/dataset' +'/raw_data/Data_davis_labelled_with_mask/' ), '/Data_davis_labelled_with_mask folder does not exist, please download according to the guide.'
     # write results to checkpoint
     dir_checkpoint = Path('./' + direction + '_checkpoints/')
     with open(os.path.join(
@@ -71,7 +77,7 @@ def train_net(
                 print(user_train)
                 for order in orders:
                     f = h5py.File(os.path.join(
-                        data_dir + '/Data_dvs_labelled_combine/' + direction + '/user' + str(
+                        data_dir + '/raw_data/Data_davis_labelled_with_mask/' + direction + '/user' + str(
                             user_train) + '_session_' + order + '.h5'), 'r')
                     # for key in f.keys():
                     #     print(f[key].name)
@@ -113,7 +119,7 @@ def train_net(
             for user_test in range(user, user + 1):
                 for order in orders:
                     f = h5py.File(os.path.join(
-                        data_dir + '/Data_dvs_labelled_combine/'+direction + '/user' + str(
+                        data_dir + '/raw_data/Data_davis_labelled_with_mask/'+direction + '/user' + str(
                             user_test) + '_session_' + order + '.h5'), 'r')  # 
 
                     print(((f['data'].value).T).shape)
