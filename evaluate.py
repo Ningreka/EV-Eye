@@ -21,7 +21,6 @@ def evaluate(net, dataloader, device):
         # print(mask_true.shape)
 
         mask_true = F.one_hot(mask_true, net.n_classes).permute(0, 3, 1, 2).float()
-
         with torch.no_grad():
             # predict the mask
             mask_pred = net(image)

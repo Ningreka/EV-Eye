@@ -13,7 +13,6 @@ def dice_coeff(input: Tensor, target: Tensor, reduce_batch_first: bool = False, 
         sets_sum = torch.sum(input) + torch.sum(target)
         if sets_sum.item() == 0:
             sets_sum = 2 * inter
-
         return (2 * inter + epsilon) / (sets_sum + epsilon)
     else:
         # compute and average metric for each batch element

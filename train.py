@@ -60,7 +60,6 @@ def train_net(
     with open(os.path.join(
             data_dir + "/"+direction + "_checkpoints/",
             f"ui_result.txt"), 'w') as outfiletotal:
-
         userlist = [u for u in range(1, 49)]
         orders = ["1_0_2", "2_0_1", "2_0_2"]
         for user in userlist:

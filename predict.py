@@ -120,7 +120,6 @@ if __name__ == '__main__':
             net.to(device=device)
             model_dir = args.data_dir + '/' + args.direction + '_checkpoints/user' + str(
                 user) + '.pth'
-
             net.load_state_dict(torch.load(model_dir, map_location=device))
 
             logging.info('Model loaded!')
