@@ -105,7 +105,7 @@ if __name__ == '__main__':
             target_data_dir = args.data_dir + '/dataset/processed_data/Data_davis_predict/user' + str(
                 user) +  args.direction + '/session_'+order
 
-            assert os.path.exists(origin_data_dir), "please check your data directory"
+            assert os.path.exists(origin_data_dir), "please check your data directory:"+origin_data_dir
 
             target_path = (os.path.join(target_data_dir, '/predict/'))
             print(target_path)
