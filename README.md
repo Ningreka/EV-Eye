@@ -69,6 +69,21 @@ You can download the data from   [https://1drv.ms/f/s!Ar4TcaawWPssqmtPFPikuTIHUA
   │        ├─gazedata.txt
   │        ├─imudata
   ```
+The following units and definitions are used throughout the API:
+l Timestamps are always in seconds with decimals if nothing else is indicated.
+l Gaze2D is in normalized video coordinates, (0,0) corresponds to the top left corner of the
+scene camera video and (1,1) corresponds to the bottom right corner.
+l Gaze3D is a position in millimeters from the scene camera, X is positive to the left, Y is positive up, and Z is positive forward.
+l Gaze Origin is a position in the same coordinate system as Gaze3D.
+l Gaze Direction is a normalized vector that starts in the gaze origin of the respective eye,
+same coordinate system as Gaze3D.
+l Pupil diameter is measured in millimeters.
+l Accelerometer is measured in meter/second2 (m/s2).
+l Gyroscope is measured in degrees/second (°/s).
+l Magnetometer is measured in microtesla (μT).
+
+
+
 
 - processed_data
 
