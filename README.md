@@ -3,7 +3,9 @@
 ## Summary
 We introduce the most diverse and largest multi-modal eye tracking dataset in the literature and propose a novel hybrid frame-event eye tracking system that can track the pupil at a frequency up to 38.4KHz.
 Our comprehensive evaluation shows that the proposed method outperforms existing solution in both pupil tracking and event-based gaze estimation by a large margin.
-<br />
+<br/>
+<br/>
+
 ![summary](pictures/main.jpg)
 
 <br/>
