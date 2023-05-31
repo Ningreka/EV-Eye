@@ -1,8 +1,9 @@
 # EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras
 
 ## Summary
-We introduce the most diverse and largest multi-modal eye tracking dataset in the literature and propose a novel hybrid frame-event eye tracking system that can track the pupil at a frequency up to 38.4KHz.
-Our comprehensive evaluation shows that the proposed method outperforms existing solution in both pupil tracking and event-based gaze estimation by a large margin.
+We introduce the most diverse and largest multi-modal eye tracking dataset in the literature for high frequency eye tracking in the literature. and propose a novel hybrid frame-event eye tracking system that can track the pupil at a frequency up to 38.4KHz.
+We propose a novel hybrid frame-event eye tracking benchmarking approach bespoke for the collected dataset that can track the pupil at a frequency up to 38.4KHz and outperforms the existing
+solution in both pupil and gaze estimation by a large margin.
 <br/>
 <br/>
 
@@ -64,7 +65,6 @@ You can download the data from   [https://1drv.ms/f/s!Ar4TcaawWPssqmtPFPikuTIHUA
   │  ├─tobiisend.txt
   │  ├─ tobiittl.txt
   │  ├─session_1_0_1
-  │        ├─diameter.csv
   │        ├─eventdata
   │        ├─gazedata.txt
   │        ├─imudata
