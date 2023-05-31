@@ -66,7 +66,8 @@ You can download the data from   [https://1drv.ms/f/s!Ar4TcaawWPssqmtPFPikuTIHUA
   │  ├─ tobiittl.txt
   │  ├─session_1_0_1
   │        ├─eventdata
-  │        ├─gazedata.txt
+  │        ├─gazedata
+  │        ├─scenevideo
   │        ├─imudata
   ```
 The following units and definitions are used throughout the API:
