@@ -95,7 +95,7 @@ if __name__ == '__main__':
             origin_data_dir = args.data_dir + '/dataset/raw_data/Data_davis/user' + str(
                 user) + args.direction + '/session_'+order+'/events/'
 
-            assert os.path.exists(origin_data_dir), "please check your data directory"
+            assert os.path.exists(origin_data_dir), " please check your data directory:"+origin_data_dir
 
             origin_paths = []
 

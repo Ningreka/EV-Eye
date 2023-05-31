@@ -105,8 +105,15 @@ pip install -r requirements.txt
 
 cd ./dataset
 
-#download checkpoints
-wget xxx
+#download processed_data
+
+#unzip processed_data to 'dataset' folder
+unzip processed_data.zip -d /path/dataset
+
+#download raw_data
+
+#unzip raw_data to 'dataset' folder
+unzip raw_data.zip -d /path/dataset
 
 python train.py
 
