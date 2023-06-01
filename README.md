@@ -80,15 +80,14 @@ the TTL signal receiving time in the glasses internal clock. The detailed introd
 
 - processed_data
 
+Pre-trained_models:
+
 Data_davis_predict:
-Using the algorithm, estimated pupil images were obtained from the grayscale images for each user's session 102, 201,
-and 202.
 
 Frame_event_pupil_track_result:
 
 Pixel_error_evaluation:
 
-Pre-trained_models:
 
 To access more information about the setup and data collection process, kindly refer to Section 3 of the corresponding paper.
 
