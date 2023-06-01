@@ -22,7 +22,7 @@ You can download the data from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw
 
 Data_davis: Including near-eye gryscale images in and event streams captured by two sets of DAVIS346 event cameras for left and right eyes.
 Each user participates four sessions of data collection, the first two session capture both saccade and fixation states of the eye movement, the last two sessions record eye movement in smooth pursuit. 
-We leverage the VGG Image Annotator [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://) to label the pupil region of 9,011 near-eye images selected uniformly across the image dataset, the marked result are recorded in excel tables in the last three sessions, e.g., "raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv".
+We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://) to label the pupil region of 9,011 near-eye images selected uniformly across the image dataset, annotation results are recorded in excel tables in the last three sessions, e.g., "raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv".
   ```
   ─Data_davis
   ├─user1
@@ -45,7 +45,7 @@ We leverage the VGG Image Annotator [https://www.robots.ox.ac.uk/~vgg/software/v
   │  └─right
   │      ..........
   ```
-Data_davis_labelled_with_mask: Using the code in '/matlab_processed/enerate_pupil_mask.m' to label the pupil area of the grayscale images, the results are saved in the hdf5 files and used for DL-based Pupil Segmentation.
+Data_davis_labelled_with_mask: Using the code in '/matlab_processed/enerate_pupil_mask.m' to label grayscale images with annotation results in Data_davis, the results are saved as hdf5 files and used for DL-based Pupil Segmentation.
   ```-
   ─Data_davis_labelled_with_mask
   ├─left
