@@ -16,7 +16,7 @@ We propose a novel hybrid frame-event eye tracking benchmarking approach tailore
 
 ## Dataset organization
 
-You can download the data from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw](https://)(To access more information about the setup and data collection process, kindly refer to Section 3 of the corresponding paper), which consists of:
+You can download the data from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw](https://), which consists of:
 
 - raw_data
 
@@ -100,6 +100,8 @@ l Magnetometer is measured in microtesla (μT).
   Pixel_error_evaluation:
 
   Pre-trained_models:
+
+To access more information about the setup and data collection process, kindly refer to Section 3 of the corresponding paper.
 
 <br/>
 
