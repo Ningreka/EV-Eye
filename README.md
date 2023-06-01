@@ -20,7 +20,7 @@ You can download the data from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw
 
 - raw_data 
 
-Data_davis: Including near-eye gryscale images in "raw_data/Data_davis/" and event streams "raw_data/Data_davis/" captured by two sets of DAVIS346 event cameras for left and right eyes, each user participates four sessions of data collection. The first two session i.e., session_1_0_1 & session_1_0_2 allow us to trigger and capture both saccade and fixation states of the eye movement, and for the last two sessions session_2_0_1 & session_2_0_2 allows us to record eye movement in smooth pursuit. For each user, we leverage the VGG Image Annotator [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://) to label the pupil region of 9,011 near-eye images selected uniformly across the whole image dataset, the result are recorded in excel tables for the last three sessions,  e.g., "raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv" .
+Data_davis: Including near-eye gryscale images in "raw_data/Data_davis/" and event streams "raw_data/Data_davis/" captured by two sets of DAVIS346 event cameras for left and right eyes, each user participates four sessions of data collection. The first two session allow us to trigger and capture both saccade and fixation states of the eye movement, and the last two sessions allows us to record eye movement in smooth pursuit. For each user, we leverage the VGG Image Annotator [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://) to label the pupil region of 9,011 near-eye images selected uniformly across the whole image dataset, the marked result are recorded in excel tables for the last three sessions,  e.g., "raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv" .
 
   ```
   ─Data_davis
@@ -45,17 +45,22 @@ Data_davis: Including near-eye gryscale images in "raw_data/Data_davis/" and eve
   │      ..........
   ```
 
-  Data_davis_labelled_with_mask: Use the code in '/matlab_data_processing' to label the position of the pupils in frames
-  captured by the event camera, and save the labels as an hdf5 file.
-  ```
+  Data_davis_labelled_with_mask: 
+  
+  
+  
+  the labels as an hdf5 file.
+  ```-
   ─Data_davis_labelled_with_mask
   ├─left
   │  ├─user1_session_1_0_2.h5
-  │  │─user1_session_2_0_1.h5
+  │  ├─user1_session_2_0_1.h5
+  │  │─user1_session_2_0_2.h5
   │  ..........
   ├─right
   │  ├─user1_session_1_0_2.h5
-  │  │─user1_session_2_0_1.h5
+  │  ├─user1_session_2_0_1.h5
+  │  │─user1_session_2_0_2.h5
   │  ..........
   ```
 
