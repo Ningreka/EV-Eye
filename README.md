@@ -76,6 +76,7 @@ the TTL signal receiving time in the glasses internal clock. The detailed introd
   │        ├─eventdata
   ```
 
+To access more information about the setup and data collection process, kindly refer to Section 3 of the corresponding paper.
 
 
 - processed_data
@@ -89,7 +90,6 @@ Frame_event_pupil_track_result:
 Pixel_error_evaluation:
 
 
-To access more information about the setup and data collection process, kindly refer to Section 3 of the corresponding paper.
 
 <br/>
 
