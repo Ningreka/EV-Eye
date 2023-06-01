@@ -31,16 +31,18 @@ You can download the data from   [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3O
   │  │  │  └─frames
   │  │  ├─session_1_0_2
   │  │  │  ├─events
-  │  │  │  └─frames
+  │  │  │  ├─frames
+  │  │  │  └─user_1
   │  │  ├─session_2_0_1
   │  │  │  ├─events
-  │  │  │  └─frames
-  │  │  └─session_2_0_2
-  │  │      ├─events
-  │  │      └─frames
+  │  │  │  ├─frames
+  │  │  │  └─user_1
+  │  │  ├─session_2_0_2
+  │  │  │  ├─events
+  │  │  │  ├─frames
+  │  │  │  └─user_1
   │  └─right
   │      ..........
-
   ```
 
   Data_davis_labelled_with_mask: Use the code in '/matlab_data_processing' to label the position of the pupils in frames
