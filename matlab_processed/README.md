@@ -1,5 +1,5 @@
 # Ev-eye dataset processing
-We use matlab to process raw data to get the ground truth.
+We use matlab to process raw data.
 
 ## Installation
 ```angular2html
