@@ -62,8 +62,8 @@ Data_davis_labelled_with_mask: Using the code in '/matlab_processed/enerate_pupi
   ```
 
 
-  Data_tobii: The gaze references provided by Tobii Pro Glasses 3. The tobiisend.txt file records the system time when TTL signal is send to Tobii Pro Glasses 3, the tobiittl.txt records
-  the TTL signal receiving time in the glasses internal clock. The introduction of gazedata, scenevideo.mp4、 imudata、 eventdata can be find in: [[https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form)](https://) 
+Data_tobii: The gaze references provided by Tobii Pro Glasses 3. The tobiisend.txt file records the system time when TTL signal is send to Tobii Pro Glasses 3, the tobiittl.txt records
+the TTL signal receiving time in the glasses internal clock. The introduction of gazedata, scenevideo、 imudata、 eventdata can be find in: [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form)](https://) 
   ```
   -Data_tobii
   ├─ user1 
@@ -71,7 +71,7 @@ Data_davis_labelled_with_mask: Using the code in '/matlab_processed/enerate_pupi
   │  ├─tobiittl.txt
   │  ├─session_1_0_1
   │        ├─gazedata
-  │        ├─scenevideo.mp4
+  │        ├─scenevideo
   │        ├─imudata
   │        ├─eventdata
   ```
