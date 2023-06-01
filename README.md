@@ -46,7 +46,7 @@ We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/sof
   │  └─right
   │      ..........
   ```
-Data_davis_labelled_with_mask: Using the code in '/matlab_processed/enerate_pupil_mask.m' to label grayscale images with annotation results in Data_davis, the results are saved as hdf5 files, which are then used for training the DL-based pupil segmentation network.
+Data_davis_labelled_with_mask: Using the code in '/matlab_processed/generate_pupil_mask.m' to label grayscale images with annotation results in Data_davis, the results are saved as hdf5 files, which are then used for training the DL-based pupil segmentation network.
   ```
   ─Data_davis_labelled_with_mask
   ├─left
@@ -79,13 +79,13 @@ the TTL signal receiving time in the glasses internal clock. The detailed introd
 To access more information about the setup and data curation process, kindly refer to Section 3 of the corresponding paper.
 
 
-- processed_data
+- processed_data  
 
-Pre-trained_models:
+Pre-trained_models: DL-based Pupil Segmentation network models trained using the left and right eyes of each of the 48 participants.
 
-Data_davis_predict:
+Data_davis_predict: Binarized masks of 48 participants that extract the pupil area out of the background using pre-trained_models.
 
-Frame_event_pupil_track_result:
+Frame_event_pupil_track_result:  '/matlab_processed/frame_event_pupil_track.m'      '/matlab_processed/frame_event_pupil_track_plot.m' 
 
 Pixel_error_evaluation:
 
@@ -137,7 +137,7 @@ python predict.py
 
 ## Training
 
-To train the model(s) in the paper, run this command:
+To train the DL-based Pupil Segmentation network models in the paper, run this command:
 
 ```
 python train.py
