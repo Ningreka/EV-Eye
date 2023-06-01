@@ -16,12 +16,14 @@ We propose a novel hybrid frame-event eye tracking benchmarking approach tailore
 
 ## Dataset organization
 
-You can download the data from   [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw](https://) ,which consists of
+You can download the data from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw](https://)(To access more information about the setup and data collection process, kindly refer to Section 3 of the corresponding paper), which consists of:
 
 - raw_data
 
-  Data_davis : From user1 to user48, all eye tracking data collected using event cameras, including data from left and
-  right eyes, for each user including four sessions.
+  Data_davis : From user1 to user48, 
+  
+  https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html
+
   ```
   ─Data_davis
   ├─user1
