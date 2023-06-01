@@ -20,9 +20,9 @@ You can download the data from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw
 
 - raw_data 
 
-Data_davis: Including near-eye gryscale images in and event streams captured by two sets of DAVIS346 event cameras for left and right eyes.
+Data_davis: Including near-eye gryscale images in and event streams captured by two sets of DAVIS346 event cameras for "left" and "right" eyes.
 Each user participates four sessions of data collection, the first two session capture both saccade and fixation states of the eye movement, the last two sessions record eye movement in smooth pursuit. 
-We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://) to label the pupil region of 9,011 near-eye images selected uniformly across the image dataset, annotation results are recorded in excel tables in the last three sessions, e.g., "raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv".
+We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://) to label the pupil region of 9,011 near-eye images selected uniformly across the image dataset, annotation results are recorded in excel tables in the last three sessions, e.g., "raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv". The creation_time.txt file records the system time when davis 346 started collecting.
   ```
   ─Data_davis
   ├─user1
@@ -42,11 +42,12 @@ We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/sof
   │  │  │  ├─events
   │  │  │  ├─frames
   │  │  │  └─user_1.csv
+  │  │  ├─creation_time.txt
   │  └─right
   │      ..........
   ```
-Data_davis_labelled_with_mask: Using the code in '/matlab_processed/enerate_pupil_mask.m' to label grayscale images with annotation results in Data_davis, the results are saved as hdf5 files and used for DL-based Pupil Segmentation.
-  ```-
+Data_davis_labelled_with_mask: Using the code in '/matlab_processed/enerate_pupil_mask.m' to label grayscale images with annotation results in Data_davis, the results are saved as hdf5 files, which are then used for training the DL-based pupil segmentation network.
+  ```
   ─Data_davis_labelled_with_mask
   ├─left
   │  ├─user1_session_1_0_2.h5
@@ -60,31 +61,20 @@ Data_davis_labelled_with_mask: Using the code in '/matlab_processed/enerate_pupi
   │  ..........
   ```
 
-  Data_tobii: The gaze references provided by Tobii Pro Glasses 3.
+
+  Data_tobii: The gaze references provided by Tobii Pro Glasses 3. The tobiisend.txt file records the system time when TTL signal is send to Tobii Pro Glasses 3, the tobiittl.txt records
+  the TTL signal receiving time in the glasses internal clock. The introduction of gazedata, scenevideo.mp4、 imudata、 eventdata can be find in: [[https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form)](https://) 
   ```
   -Data_tobii
   ├─ user1 
   │  ├─tobiisend.txt
-  │  ├─ tobiittl.txt
+  │  ├─tobiittl.txt
   │  ├─session_1_0_1
-  │        ├─eventdata
   │        ├─gazedata
-  │        ├─scenevideo
+  │        ├─scenevideo.mp4
   │        ├─imudata
+  │        ├─eventdata
   ```
-The following units and definitions are used throughout the API:
-l Timestamps are always in seconds with decimals if nothing else is indicated.
-l Gaze2D is in normalized video coordinates, (0,0) corresponds to the top left corner of the
-scene camera video and (1,1) corresponds to the bottom right corner.
-l Gaze3D is a position in millimeters from the scene camera, X is positive to the left, Y is positive up, and Z is positive forward.
-l Gaze Origin is a position in the same coordinate system as Gaze3D.
-l Gaze Direction is a normalized vector that starts in the gaze origin of the respective eye,
-same coordinate system as Gaze3D.
-l Pupil diameter is measured in millimeters.
-l Accelerometer is measured in meter/second2 (m/s2).
-l Gyroscope is measured in degrees/second (°/s).
-l Magnetometer is measured in microtesla (μT).
-
 
 
 
