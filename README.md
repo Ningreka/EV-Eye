@@ -91,7 +91,9 @@ To access more information about the setup and data curation process, kindly ref
  
 <br/>
 
-## Requirements
+
+## How to use
+### Requirements
 
 ```
 python>=3.6
@@ -108,71 +110,69 @@ To install requirements:
 ```angular2html
 pip install -r requirements.txt
 ```
-
-## Installation
-
+### Download Dataset
+Download the **raw_data** and **processed_data** folders to the **'/dataset'** folder and run 
 ```
-pip install -r requirements.txt
+cd /path/dataset #choose your own path
 
-cd ./dataset
+#upzip
 
-#download processed_data
-
-#unzip processed_data to 'dataset' folder
-find /dataset/ -maxdepth 1 -name "*.zip" -exec unzip {} -d /dataset \
-
-#download raw_data
-
-#unzip raw_data to 'dataset' folder
-unzip raw_data.zip -d /path/dataset
-
-python train.py
-
-python predict.py
+find . -mindepth 2 -maxdepth 2 -name '*.rar' -execdir unrar x {} \; -execdir mv {} ./ \;
 ```
 
-[//]: # (<br/>)
-
-## Training
+### Training
 
 To train the DL-based Pupil Segmentation network models in the paper, run this command:
 
 ```
-python train.py
+python train.py 
 ```
 
-## Pre-trained Models
-
-You can download pretrained models here: "processed_data/Pre-trained_models"
-
-## Results
-##### IoUs and F1 scores on frame-based pupil segmentation.
-
-<br/>
-<div style="display:flex;">
-  <img src="pictures/iou_new.png" alt="iou" style="flex:1;">
-  <img src="pictures/dice.png" alt="iou" style="flex:1;">
-</div>
 
 
-<br/>
+[//]: # (## Results)
 
-##### The pixel error of frame-based and event-based pupil tracking.
+[//]: # (##### IoUs and F1 scores on frame-based pupil segmentation.)
 
-<br/>
+[//]: # ()
+[//]: # (<br/>)
 
+[//]: # (<div style="display:flex;">)
 
-![event](pictures/event_pixel.png)
-![frame](pictures/frame_pixel.png)
+[//]: # (  <img src="pictures/iou_new.png" alt="iou" style="flex:1;">)
 
-<br/>
+[//]: # (  <img src="pictures/dice.png" alt="iou" style="flex:1;">)
 
-##### DoDs of model-based method vs. ours with respect to the gaze references.
+[//]: # (</div>)
 
-<br/>
-<img src="pictures/distance.png" style="margin-left: 6px">
+[//]: # ()
+[//]: # ()
+[//]: # (<br/>)
 
-![distance](pictures/distance.png)
+[//]: # ()
+[//]: # (##### The pixel error of frame-based and event-based pupil tracking.)
+
+[//]: # ()
+[//]: # (<br/>)
+
+[//]: # ()
+[//]: # ()
+[//]: # (![event]&#40;pictures/event_pixel.png&#41;)
+
+[//]: # (![frame]&#40;pictures/frame_pixel.png&#41;)
+
+[//]: # ()
+[//]: # (<br/>)
+
+[//]: # ()
+[//]: # (##### DoDs of model-based method vs. ours with respect to the gaze references.)
+
+[//]: # ()
+[//]: # (<br/>)
+
+[//]: # ()
+[//]: # (<img src="pictures/distance.png" style="margin-left: 6px">)
+
 ## Citation
 
 If using this code-base and/or the EV-eye dataset in your paper, please cite the following publication:
