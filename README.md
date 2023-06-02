@@ -149,15 +149,18 @@ You can download pretrained models here: "processed_data/Pre-trained_models"
 ##### IoUs and F1 scores on frame-based pupil segmentation.
 
 <br/>
+<div style="display:flex;">
+  <img src="pictures/iou_new.png" alt="iou" style="flex:1;">
+  <img src="pictures/dice.png" alt="iou" style="flex:1;">
+</div>
 
-![iou](pictures/iou_new.png)
-![iou](pictures/dice.png)
 
 <br/>
 
 ##### The pixel error of frame-based and event-based pupil tracking.
 
 <br/>
+
 
 ![event](pictures/event_pixel.png)
 ![frame](pictures/frame_pixel.png)
@@ -167,6 +170,7 @@ You can download pretrained models here: "processed_data/Pre-trained_models"
 ##### DoDs of model-based method vs. ours with respect to the gaze references.
 
 <br/>
+<img src="pictures/distance.png" style="margin-left: 6px">
 
 ![distance](pictures/distance.png)
 ## Citation
