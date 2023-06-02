@@ -8,7 +8,7 @@
 </div>
 
 - We propose a novel hybrid frame-event eye tracking benchmarking approach tailored to the collected dataset, capable of tracking the pupil at a frequency up to 38.4kHz. 
-<div style="display:flex;">
+<div align=center style="display:flex;">
  <img src="pictures/main.jpg" alt="iou" style="flex:1;" width="900" height="300" >
 </div>
 
