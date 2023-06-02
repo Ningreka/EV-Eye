@@ -49,6 +49,10 @@ def train_net(
         data_dir: str = os.getcwd()
 
 ):
+    if direction == 'L':
+        direction = 'left'
+    if direction == 'R':
+        direction = 'right'
     save_checkpoint = data_dir+"/"+direction + '_checkpoints'
 
     if not os.path.exists(save_checkpoint):

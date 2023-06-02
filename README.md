@@ -93,10 +93,11 @@ To access more information about the setup and data curation process, kindly ref
 
 
 ## How to use
+
+Note: please use Python >= 3.6.0
 ### Requirements
 
 ```
-python>=3.6
 torch>=1.9.0
 numpy>=1.21.0
 tqdm>=4.61.1
@@ -128,7 +129,20 @@ To train the DL-based Pupil Segmentation network models in the paper, run this c
 python train.py 
 ```
 
+Optional arguments can be passed :
+* `direction` direction of dataset to be used,such as 'L' or 'R'.
+* `save_checkpoint` Whether to save the checkpoint or not,default mode is true.
+* `batch_size ` Batch size to use for training.
 
+### Predict
+
+```angular2html
+python predict.py
+```
+Optional arguments can be passed :
+* `direction` direction of dataset to be used,such as 'L' or 'R'.
+* `--predict` the user ID to be estimated, for example, '1'. 
+* `--output` The output directory for the prediction results, default '/predict_results'.
 
 [//]: # (## Results)
 

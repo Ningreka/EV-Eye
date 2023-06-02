@@ -54,7 +54,8 @@ def get_args():
     parser.add_argument('--model', '-m', default='MODEL.pth', metavar='FILE',
                         help='Specify the file in which the model is stored')
     parser.add_argument('--input', '-i', help="pls enter a string", type=str)
-    parser.add_argument('--output', '-o', metavar='OUTPUT', nargs='+', help='Filenames of output images')
+    parser.add_argument('--output', '-o', metavar='OUTPUT', nargs='+', help='Filenames of output images',
+                        default=os.getcwd())
     parser.add_argument('--viz', '-v', action='store_true',
                         help='Visualize the images as they are processed')
     parser.add_argument('--no-save', '-n', action='store_true', help='Do not save the output masks')
@@ -63,6 +64,8 @@ def get_args():
     parser.add_argument('--scale', '-s', type=float, default=1,
                         help='Scale factor for the input images')
     parser.add_argument('--bilinear', action='store_true', default=False, help='Use bilinear upsampling')
+
+    parser.add_argument('--predict', type=str, default='1')
 
     parser.add_argument('--data_dir', type=str, default=os.getcwd())
     parser.add_argument('--direction', type=str, default="right")
@@ -88,56 +91,59 @@ if __name__ == '__main__':
     args = get_args()
     device = args.device
     userlist = [u for u in range(1, 49)]
-    orders = ['1_0_1','1_0_2','2_0_1','2_0_2']
-    for user in userlist:
-        print(user)
-        for order in orders:
-            origin_data_dir = args.data_dir + '/dataset/raw_data/Data_davis/user' + str(
-                user) + args.direction + '/session_'+order+'/events/'
+    user = args.user
+    direction = 'right'
+    if args.direction == 'L':
+        direction = 'left'
+    if args.direction == 'R':
+        direction = 'right'
+    orders = ['1_0_1', '1_0_2', '2_0_1', '2_0_2']
+    for order in orders:
+        origin_data_dir = args.data_dir + '/dataset/raw_data/Data_davis/user' + str(
+            user) + direction + '/session_' + order + '/events/'
 
-            assert os.path.exists(origin_data_dir), " please check your data directory:"+origin_data_dir
+        assert os.path.exists(origin_data_dir), " please check your data directory:" + origin_data_dir
 
-            origin_paths = []
+        origin_paths = []
 
-            paths = glob.glob(os.path.join(origin_data_dir, 'frames/', '*.png'))
-            origin_paths.extend(paths)
+        paths = glob.glob(os.path.join(origin_data_dir, 'frames/', '*.png'))
+        origin_paths.extend(paths)
 
-            target_data_dir = args.data_dir + '/dataset/processed_data/Data_davis_predict/user' + str(
-                user) +  args.direction + '/session_'+order
+        # target_data_dir = args.data_dir + '/dataset/processed_data/Data_davis_predict/user' + str(
+        #     user) + direction + '/session_' + order
 
-            assert os.path.exists(origin_data_dir), "please check your data directory:"+origin_data_dir
+        output_dir = args.output_dir + '/predict_results' + str(user) + direction + '/session' + order + "/"
 
-            target_path = (os.path.join(target_data_dir, '/predict/'))
-            print(target_path)
-            if not os.path.exists(target_path):
-                os.makedirs(target_path)
+        assert os.path.exists(origin_data_dir), "please check your data directory:" + origin_data_dir
 
-            net = UNet(n_channels=1, n_classes=2, bilinear=args.bilinear)
+        print(output_dir)
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
 
+        net = UNet(n_channels=1, n_classes=2, bilinear=args.bilinear)
 
-            logging.info(f'Loading model {args.model}')
-            logging.info(f'Using device {device}')
-            net.to(device=device)
-            model_dir = args.data_dir + '/' + args.direction + '_checkpoints/user' + str(
-                user) + '.pth'
-            net.load_state_dict(torch.load(model_dir, map_location=device))
+        logging.info(f'Loading model {args.model}')
+        logging.info(f'Using device {device}')
+        net.to(device=device)
+        model_dir = args.data_dir + '/' + direction + '_checkpoints/user' + str(
+            user) + '.pth'
+        net.load_state_dict(torch.load(model_dir, map_location=device))
 
-            logging.info('Model loaded!')
+        logging.info('Model loaded!')
 
-            for i, filename in enumerate(tqdm(origin_paths)):
+        for i, filename in enumerate(tqdm(origin_paths)):
+            logging.info(f'\nPredicting image {filename} ...')
+            img = Image.open(filename)
 
-                logging.info(f'\nPredicting image {filename} ...')
-                img = Image.open(filename)
+            mask = predict_img(net=net,
+                               full_img=img,  #
+                               scale_factor=args.scale,
+                               out_threshold=args.mask_threshold,
+                               device=device)
 
-                mask = predict_img(net=net,
-                                   full_img=img,  #
-                                   scale_factor=args.scale,
-                                   out_threshold=args.mask_threshold,
-                                   device=device)
-           
-                out_filename = (os.path.join(target_path, osp.splitext(os.path.split(filename)[-1])[0] + '_mask.gif'))
-                # print(out_filename)
-                result = mask_to_image(mask)
+            out_filename = (os.path.join(output_dir, osp.splitext(os.path.split(filename)[-1])[0] + '_mask.gif'))
+            # print(out_filename)
+            result = mask_to_image(mask)
 
-                result.save(out_filename)
-                logging.info(f'Mask saved to {out_filename}')
+            result.save(out_filename)
+            logging.info(f'Mask saved to {out_filename}')
