@@ -92,9 +92,9 @@ To access more information about the setup and data curation process, kindly ref
 ## **Running the benchmark**
 our code include deeplearning writen by python to train and evaluate a unet to predict the mask for pupil and the frame-event tracking writen by 
 
-
+### Python
 Note: please use Python >= 3.6.0
-### Requirements
+#### Requirements
 
 ```
 torch>=1.9.0
@@ -110,7 +110,7 @@ To install requirements:
 ```angular2html
 pip install -r requirements.txt
 ```
-### Download Dataset
+#### Download Dataset
 Download the **raw_data** and **processed_data** folders to the **'/dataset'** folder and run 
 ```
 cd /path/dataset #choose your own path
@@ -120,7 +120,7 @@ cd /path/dataset #choose your own path
 find . -mindepth 2 -maxdepth 2 -name '*.rar' -execdir unrar x {} \; -execdir mv {} ./ \;
 ```
 
-### Training
+#### Training
 
 To train the DL-based Pupil Segmentation network models in the paper, run this command:
 
@@ -133,7 +133,7 @@ Optional arguments can be passed :
 * `--save_checkpoint` Whether to save the checkpoint or not,default mode is true.
 * `--batch_size ` Batch size to use for training.
 
-### Predict
+#### Predict
 
 ```angular2html
 python predict.py
@@ -143,7 +143,7 @@ Optional arguments can be passed :
 * `--predict` the user ID to be estimated, for example, '1'. 
 * `--output` The output directory for the prediction results, default '/predict_results'.
 
-
+### Matlab
 
 
 **processed_data** 
