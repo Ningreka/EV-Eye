@@ -6,6 +6,8 @@ We propose a novel hybrid frame-event eye tracking benchmarking approach tailore
 <br/>
 <br/>
 
+![summary](pictures/samples.jpg)
+
 ![summary](pictures/main.jpg)
 <br/>
 
