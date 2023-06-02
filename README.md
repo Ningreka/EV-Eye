@@ -6,19 +6,23 @@ We propose a novel hybrid frame-event eye tracking benchmarking approach tailore
 <br/>
 <br/>
 
-![summary](pictures/main.jpg)
+![summary](pictures/samples.png)
 
+![summary](pictures/main.jpg)
 <br/>
 
-## A quick Youtube demo for introduction
-[![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
 
+## Overview
+The repository includes an introduction to EV-Eye Dataset organization and how to Running the benchmark in python and matlab.
+<!-- ## A quick Youtube demo for introduction
+[![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
+ -->
 
 ## Dataset organization
 
 You can download the data from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw](https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw), which consists of:
 
-- raw_data 
+-**raw_data**
 
 **Data_davis**: Including near-eye gryscale images in and event streams captured by two sets of DAVIS346 event cameras for "left" and "right" eyes.
 Each user participates four sessions of data collection, the first two session capture both saccade and fixation states of the eye movement, the last two sessions record eye movement in smooth pursuit. 
