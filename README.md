@@ -2,7 +2,8 @@
 
 ## Introduction EV-Eye
 - We introduce the largest and most diverse multi-modal frame-event dataset for high frequency eyetracking in the literature. 
-<div style="display:flex;">
+
+<div align=center style="display:flex;">
   <img src="pictures/samples.png" alt="iou" style="flex:1;" width="600" height="300">
 </div>
 
