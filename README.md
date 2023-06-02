@@ -13,7 +13,7 @@ We propose a novel hybrid frame-event eye tracking benchmarking approach tailore
 
 
 ## Overview
-
+The repository includes an introduction to EV-Eye Dataset organization and how to running the benchmark code.
 <!-- ## A quick Youtube demo for introduction
 [![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
  -->
