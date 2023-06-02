@@ -163,6 +163,9 @@ matlab -batch "pkg install -forge curvefit"
 **Pixel_error_evaluation**:  Using the code in ``/matlab_processed/pe_of_frame_based_pupil_track.m`` and ``/matlab_processed/pe_of_event_based_pupil_track.m`` to estimated Euclidean distance in pixels between the estimated and groundtruth pupil centers.
 
 
+``/matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m`` to  estimate Difference of direction (DoD) in gaze tracking
+
+
 
 [//]: # (## Results)
 
