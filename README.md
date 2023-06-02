@@ -6,9 +6,15 @@ We propose a novel hybrid frame-event eye tracking benchmarking approach tailore
 <br/>
 <br/>
 
-![summary](pictures/samples.png)
+<div style="display:flex;">
+  <img src="pictures/samples.png" alt="iou" style="flex:1;" width="1000" height="400">
+  <img src="pictures/main.jpg" alt="iou" style="flex:1;" width="1500" >
+</div>
 
-![summary](pictures/main.jpg)
+[//]: # (![summary]&#40;pictures/samples.png&#41;)
+
+[//]: # ()
+[//]: # (![summary]&#40;pictures/main.jpg&#41;)
 <br/>
 
 
