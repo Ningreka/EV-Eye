@@ -81,7 +81,7 @@ To access more information about the setup and data curation process, kindly ref
 
 - processed_data  
 
-Pre-trained_models: DL-based Pupil Segmentation network models trained using the left and right eyes of each of the 48 participants.
+Pre-trained_models: DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
 
 Data_davis_predict: Binarized masks of 48 participants that extract the pupil area out of the background using pre-trained_models.
 
@@ -146,16 +146,13 @@ python train.py
 You can download pretrained models here: "processed_data/Pre-trained_models"
 
 ## Results
-
-![dice](pictures/dice.png)
-![distance](pictures/distance.png)
+![iou](pictures/iou_new.png)
 ![event](pictures/event_pixel.png)
 ![frame](pictures/frame_pixel.png)
-![iou](pictures/iou_new.png)
-
+![distance](pictures/distance.png)
 ## Citation
 
-If you would like to use our code or dataset, please cite either
+If using this code-base and/or the EV-eye dataset in your paper, please cite the following publication:
 
 ```
 @inproceedings{,  
