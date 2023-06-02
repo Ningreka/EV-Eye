@@ -90,6 +90,15 @@ To access more information about the setup and data curation process, kindly ref
 
 
 ## **Running the benchmark**
+
+IoU and F1 score.
+
+PE of frame-based pupil segmentation. 
+
+PE of event-based pupil tracking. 
+
+Difference of direction (DoD) in gaze tracking.
+
 our code include deeplearning writen by python to train and evaluate a unet to predict the mask for pupil and the frame-event tracking writen by 
 
 ### Python
