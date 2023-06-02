@@ -85,7 +85,7 @@ Pre-trained_models: DL-based Pupil Segmentation network models trained using the
 
 Data_davis_predict: Binarized masks of 48 participants that extract the pupil area out of the background using pre-trained_models.
 
-Frame_event_pupil_track_result: Using the code in '/matlab_processed/frame_event_pupil_track.m' to obtain frame&event-based pupil tracking results i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization code is in '/matlab_processed/frame_event_pupil_track_plot.m' 
+Frame_event_pupil_track_result: Using the code in '/matlab_processed/frame_event_pupil_track.m' to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization code is in '/matlab_processed/frame_event_pupil_track_plot.m'. 
 
 Pixel_error_evaluation:
 
