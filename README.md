@@ -126,9 +126,9 @@ Download the **raw_data** and **processed_data** folders to the **'/dataset'** f
 ```
 cd /path/dataset #choose your own path
 
-#upzip
+#upzip,then you can use the following command to extract all the datasets.
 
-find . -mindepth 2 -maxdepth 2 -name '*.rar' -execdir unrar x {} \; -execdir mv {} ./ \;
+find . -mindepth 1 -maxdepth 3 -name '*.rar' -execdir unrar x {} \; -execdir mv {} ./ \;
 ```
 
 ### Training
