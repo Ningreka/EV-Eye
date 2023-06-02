@@ -143,14 +143,20 @@ Optional arguments can be passed :
 * `--predict` the user ID to be estimated, for example, '1'. 
 * `--output` The output directory for the prediction results, default '/predict_results'.
 
-### Matlab
-
-
 **processed_data** 
 
 **Pre-trained_models**: DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
 
 **Data_davis_predict**: Binarized masks of 48 participants that extract the pupil area out of the background using pre-trained_models.
+### Matlab
+##### Installation
+```angular2html
+matlab -batch "pkg install -forge io"
+matlab -batch "pkg install -forge curvefit"
+```
+
+**processed_data** 
+
 
 **Frame_event_pupil_track_result**: Using the code in ``/matlab_processed/frame_event_pupil_track.m`` to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization code is in ``/matlab_processed/frame_event_pupil_track_plot.m``. 
 
