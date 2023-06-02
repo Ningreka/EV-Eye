@@ -20,7 +20,7 @@ You can download the data from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw
 
 - raw_data 
 
-Data_davis: Including near-eye gryscale images in and event streams captured by two sets of DAVIS346 event cameras for "left" and "right" eyes.
+**Data_davis**: Including near-eye gryscale images in and event streams captured by two sets of DAVIS346 event cameras for "left" and "right" eyes.
 Each user participates four sessions of data collection, the first two session capture both saccade and fixation states of the eye movement, the last two sessions record eye movement in smooth pursuit. 
 We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html) to label the pupil region of 9,011 near-eye images selected uniformly across the image dataset, annotation results are recorded in excel tables in the last three sessions, e.g., "raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv". The creation_time.txt file records the system time when davis 346 started collecting.
   ```
@@ -46,7 +46,7 @@ We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/sof
   │  └─right
   │      ..........
   ```
-Data_davis_labelled_with_mask: Using the code in "/matlab_processed/generate_pupil_mask.m" to label grayscale images with annotation results in Data_davis, the results are saved as hdf5 files, which are then used for training the DL-based pupil segmentation network.
+**Data_davis_labelled_with_mask**: Using the code in ``/matlab_processed/generate_pupil_mask.m`` to label grayscale images with annotation results in Data_davis, the results are saved as hdf5 files, which are then used for training the DL-based pupil segmentation network.
   ```
   ─Data_davis_labelled_with_mask
   ├─left
@@ -62,8 +62,8 @@ Data_davis_labelled_with_mask: Using the code in "/matlab_processed/generate_pup
   ```
 
 
-Data_tobii: The gaze references provided by Tobii Pro Glasses 3. The tobiisend.txt file records the system time when TTL signal is send to Tobii Pro Glasses 3, the tobiittl.txt records
-the TTL signal receiving time in the glasses internal clock. The detailed introduction about gazedata, scenevideo, imudata and eventdata can be find in: [https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form](https://) 
+**Data_tobii**: The gaze references provided by Tobii Pro Glasses 3. The tobiisend.txt file records the system time when TTL signal is send to Tobii Pro Glasses 3, the tobiittl.txt records
+the TTL signal receiving time in the glasses internal clock. The detailed introduction about gazedata, scenevideo, imudata and eventdata can be find in: [https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form](https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form) 
   ```
   -Data_tobii
   ├─ user1 
@@ -81,13 +81,13 @@ To access more information about the setup and data curation process, kindly ref
 
 - processed_data  
 
-Pre-trained_models: DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
+**Pre-trained_models**: DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
 
-Data_davis_predict: Binarized masks of 48 participants that extract the pupil area out of the background using pre-trained_models.
+**Data_davis_predict**: Binarized masks of 48 participants that extract the pupil area out of the background using pre-trained_models.
 
-Frame_event_pupil_track_result: Using the code in "/matlab_processed/frame_event_pupil_track.m" to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization code is in "/matlab_processed/frame_event_pupil_track_plot.m". 
+**Frame_event_pupil_track_result**: Using the code in ``/matlab_processed/frame_event_pupil_track.m`` to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization code is in ``/matlab_processed/frame_event_pupil_track_plot.m``. 
 
-Pixel_error_evaluation:  Using the code in "/matlab_processed/pe_of_frame_based_pupil_track.m" and "/matlab_processed/pe_of_event_based_pupil_track.m" to estimated Euclidean distance in pixels between the estimated and groundtruth pupil centers.
+**Pixel_error_evaluation**:  Using the code in ``/matlab_processed/pe_of_frame_based_pupil_track.m*`` and ``/matlab_processed/pe_of_event_based_pupil_track.m`` to estimated Euclidean distance in pixels between the estimated and groundtruth pupil centers.
  
 <br/>
 
@@ -146,13 +146,28 @@ python train.py
 You can download pretrained models here: "processed_data/Pre-trained_models"
 
 ## Results
-IoUs and F1 scores on frame-based pupil segmentation.
+##### IoUs and F1 scores on frame-based pupil segmentation.
+
+<br/>
+
 ![iou](pictures/iou_new.png)
 ![iou](pictures/dice.png)
-The pixel error of frame-based and event-based pupil tracking.
+
+<br/>
+
+##### The pixel error of frame-based and event-based pupil tracking.
+
+<br/>
+
 ![event](pictures/event_pixel.png)
 ![frame](pictures/frame_pixel.png)
-DoDs of model-based method vs. ours with respect to the gaze references.
+
+<br/>
+
+##### DoDs of model-based method vs. ours with respect to the gaze references.
+
+<br/>
+
 ![distance](pictures/distance.png)
 ## Citation
 
