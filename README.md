@@ -7,8 +7,8 @@ We propose a novel hybrid frame-event eye tracking benchmarking approach tailore
 <br/>
 
 <div style="display:flex;">
-  <img src="pictures/samples.png" alt="iou" style="flex:1;" width="900" height="200">
-  <img src="pictures/main.jpg" alt="iou" style="flex:1;" width="500" >
+  <img src="pictures/samples.png" alt="iou" style="flex:1;" width="900" height="500">
+  <img src="pictures/main.jpg" alt="iou" style="flex:1;" width="900" height="500" >
 </div>
 
 [//]: # (![summary]&#40;pictures/samples.png&#41;)
@@ -140,9 +140,9 @@ python train.py
 ```
 
 Optional arguments can be passed :
-* `direction` direction of dataset to be used,such as 'L' or 'R'.
-* `save_checkpoint` Whether to save the checkpoint or not,default mode is true.
-* `batch_size ` Batch size to use for training.
+* `--direction` direction of dataset to be used,such as 'L' or 'R'.
+* `--save_checkpoint` Whether to save the checkpoint or not,default mode is true.
+* `--batch_size ` Batch size to use for training.
 
 ### Predict
 
@@ -150,7 +150,7 @@ Optional arguments can be passed :
 python predict.py
 ```
 Optional arguments can be passed :
-* `direction` direction of dataset to be used,such as 'L' or 'R'.
+* `--direction` direction of dataset to be used,such as 'L' or 'R'.
 * `--predict` the user ID to be estimated, for example, '1'. 
 * `--output` The output directory for the prediction results, default '/predict_results'.
 
