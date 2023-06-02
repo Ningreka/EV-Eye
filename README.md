@@ -10,9 +10,9 @@ We propose a novel hybrid frame-event eye tracking benchmarking approach tailore
 
 <br/>
 
-## A quick Youtube demo for introduction
+<!-- ## A quick Youtube demo for introduction
 [![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
-
+ -->
 
 ## Dataset organization
 
