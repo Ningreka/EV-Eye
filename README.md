@@ -4,7 +4,7 @@
 - We introduce the largest and most diverse multi-modal frame-event dataset for high frequency eyetracking in the literature. 
 
 <div align=center style="display:flex;">
-  <img src="pictures/samples.png" alt="iou" style="flex:1;" width="400" height="200">
+  <img src="pictures/samples.png" alt="iou" style="flex:1;" width="400" height="180">
 </div>
 
 - We propose a novel hybrid frame-event eye tracking benchmarking approach tailored to the collected dataset, capable of tracking the pupil at a frequency up to 38.4kHz. 
