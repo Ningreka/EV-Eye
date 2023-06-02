@@ -87,10 +87,8 @@ Data_davis_predict: Binarized masks of 48 participants that extract the pupil ar
 
 Frame_event_pupil_track_result: Using the code in '/matlab_processed/frame_event_pupil_track.m' to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization code is in '/matlab_processed/frame_event_pupil_track_plot.m'. 
 
-Pixel_error_evaluation:
-
-
-
+Pixel_error_evaluation:  Using the code in '/matlab_processed/pe_of_frame_based_pupil_track.m' & 'pe_of_event_based_pupil_track.m' to estimated Euclidean distance in pixels between the estimated and groundtruth pupil centers.
+ 
 <br/>
 
 ## Requirements
