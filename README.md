@@ -19,14 +19,14 @@
 
 
 ## Overview
-The repository includes an introduction to EV-Eye **Dataset organization** and how to **Running the benchmark** in python and matlab.
+The repository includes an introduction to EV-Eye **Dataset organization** and how to **Running the benchmark** in Python and Matlab.
 <!-- ## A quick Youtube demo for introduction
 [![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
  -->
 
 ## Dataset organization
 
-You can download the **dataset** from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw](https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw), the **dataset** consisting of **raw_data** and **processed_data**. The **raw_data** includes **Data_davis**, **Data_davis_labelled_with_mask** and **Data_tobii** which will be described in detail in the following. As for the ** processed data** it will be described in the **Running the benchmark** section.
+You can download the **dataset** from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw](https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw), the **dataset** consisting of **raw_data** and **processed_data**. The **raw_data** includes three folders, i.e., **Data_davis**, **Data_davis_labelled_with_mask** and **Data_tobii** which will be described in detail in the following. As for the **processed data** it is the data/results processed by Python and Matlab, it will be described in the **Running the benchmark** section.
 
 
 **Data_davis**: Including near-eye gryscale images in and event streams captured by two sets of DAVIS346 event cameras for "left" and "right" eyes.
