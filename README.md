@@ -146,9 +146,13 @@ python train.py
 You can download pretrained models here: "processed_data/Pre-trained_models"
 
 ## Results
+IoUs and F1 scores on frame-based pupil segmentation.
 ![iou](pictures/iou_new.png)
+![iou](pictures/dice.png)
+The pixel error of frame-based and event-based pupil tracking.
 ![event](pictures/event_pixel.png)
 ![frame](pictures/frame_pixel.png)
+DoDs of model-based method vs. ours with respect to the gaze references.
 ![distance](pictures/distance.png)
 ## Citation
 
