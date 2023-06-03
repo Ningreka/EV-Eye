@@ -133,6 +133,11 @@ Optional arguments can be passed :
 * `--save_checkpoint` Whether to save the checkpoint or not,default mode is true.
 * `--batch_size ` Batch size to use for training.
 
+#### Evaluation
+```
+evaluate.py provides methods to calculate IoU and F1 score.
+```
+
 #### Predict
 
 ```angular2html
@@ -142,6 +147,8 @@ Optional arguments can be passed :
 * `--direction` direction of dataset to be used,such as 'L' or 'R'.
 * `--predict` the user ID to be estimated, for example, '1'. 
 * `--output` The output directory for the prediction results, default '**/EV_Eye_dataset/processed_data/Data_davis_predict**'.
+
+
 #### Pre-trained_models
 
 **Pre-trained_models**: DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
