@@ -89,7 +89,7 @@ To access more information about the data curation process and data characterist
 
 ## **Running the benchmark**
 Four metrics are adopted for the dataset evaluation, namely **IoU and F1 score**, **Pixel error (PE) of frame-based pupil segmentation**, **PE of event-based pupil tracking**, **Difference of direction (DoD) in gaze tracking**. 
-The **IoU and F1 score** are used to evaluate pupil region segmentation, we use pytorch framework in Python to train and evaluate our DL-based Pupil Segmentation network.
+The **IoU and F1 score** are used to evaluate pupil region segmentation task, we use pytorch framework in Python to train and evaluate our DL-based Pupil Segmentation network.
 The **PE of frame-based pupil segmentation**, **PE of event-based pupil tracking**, **DoD in gaze tracking** implemented through Matlab code.
  
 #### Download Dataset
@@ -150,7 +150,7 @@ Optional arguments can be passed :
 * `--batch_size ` Batch size to use for training.
 
 #### Evaluation
-The following code provides the calculation method of iou and f1 score:
+The following code provides the calculation method of **IoU and F1 score**:
 ```
 evaluate.py 
 ```
@@ -164,7 +164,6 @@ Optional arguments can be passed :
 * `--predict` the user ID to be estimated, for example, '1'. 
 * `--output` the output directory for the prediction results, default'**/EV_Eye_dataset/processed_data/Data_davis_predict**'.
 
-
 #### Pre-trained_models
 
 you can find Pre-trained_models in **/EV_Eye_dataset/processed_data/Pre-trained_models**, it contains DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
@@ -176,15 +175,14 @@ matlab -batch "pkg install -forge io"
 matlab -batch "pkg install -forge curvefit"
 ```
 
-**processed_data** 
+##### **PE of frame-based pupil segmentation** & **PE of event-based pupil tracking**
+Using the code in ``/matlab_processed/pe_of_frame_based_pupil_track.m`` and ``/matlab_processed/pe_of_event_based_pupil_track.m`` to estimated Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, the results are saved in **/EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame** and **/EV_Eye_dataset/processed_data/Pixel_error_evaluation/event**, respectively.
+Then you can plot the results as bar charts using code ``/matlab_processed/plot_bar_frame_pe.m`` and code ``/matlab_processed/plot_bar_event_pe.m``, respectively
 
-You can run it from scratch, or use our saved calculations,
-**Frame_event_pupil_track_result**: Using the code in ``/matlab_processed/frame_event_pupil_track.m`` to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization code is in ``/matlab_processed/frame_event_pupil_track_plot.m``. 
+##### **DoD in gaze tracking**
+Using the code in ``/matlab_processed/frame_event_pupil_track.m`` to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization demo is in ``/matlab_processed/frame_event_pupil_track_plot.m``, the results are saved in **/EV_Eye_dataset/processed_data/Frame_event_pupil_track_result**.
 
-**Pixel_error_evaluation**:  Using the code in ``/matlab_processed/pe_of_frame_based_pupil_track.m`` and ``/matlab_processed/pe_of_event_based_pupil_track.m`` to estimated Euclidean distance in pixels between the estimated and groundtruth pupil centers.
-
-
-``/matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m`` to estimate Difference of direction (DoD) in gaze tracking
+Using the code in ``/matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m`` to have the frame&event-based pupil tracking estimated results in **/EV_Eye_dataset/processed_data/Frame_event_pupil_track_result** correspond to the reference provided by the Tobii Pro Glasses 3 in  **/EV_Eye_dataset/raw_data/Data_tobii**  and then using the code in ``/matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m`` to estimate the difference between the estimated and reference gaze directions.
 
 
 
