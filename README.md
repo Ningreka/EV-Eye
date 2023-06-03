@@ -15,6 +15,7 @@
 [//]: # (![summary]&#40;pictures/samples.png&#41;)
 [//]: # ()
 [//]: # (![summary]&#40;pictures/main.jpg&#41;)
+
 <br/>
 
 
@@ -31,7 +32,7 @@ You can download the **dataset** from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45
 
 **Data_davis**: Including near-eye gryscale images in and event streams captured by two sets of DAVIS346 event cameras for "left" and "right" eyes.
 Each user participates four sessions of data collection, the first two session capture both saccade and fixation states of the eye movement, the last two sessions record eye movement in smooth pursuit. 
-We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html) to label the pupil region of 9,011 near-eye images selected uniformly across the image dataset, annotation results are recorded in excel tables in the last three sessions, e.g., "raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv". The creation_time.txt file records the system time when davis 346 started collecting
+We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html) to label the pupil region of 9,011 near-eye images selected uniformly across the image dataset, annotation results are recorded in excel tables in the last three sessions, e.g., "raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv". The creation_time.txt file records the system time of the computer when DAVIS346 started collecting.
   ```
   ─Data_davis
   ├─user1
@@ -55,7 +56,7 @@ We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/sof
   │  └─right
   │      ..........
   ```
-**Data_davis_labelled_with_mask**: Using the code in ``/matlab_processed/generate_pupil_mask.m`` to label grayscale images with annotation results in Data_davis, the results are saved as hdf5 files, which are then used for training the DL-based pupil segmentation network.
+**Data_davis_labelled_with_mask**: Using the code in ``/matlab_processed/generate_pupil_mask.m`` to generate binarized masks with annotation results , i.e., the excel tables in "raw_data/Data_davis", the results are saved as hdf5 files, which are then used for training the DL-based pupil segmentation network.
   ```
   ─Data_davis_labelled_with_mask
   ├─left
