@@ -141,9 +141,9 @@ python predict.py
 Optional arguments can be passed :
 * `--direction` direction of dataset to be used,such as 'L' or 'R'.
 * `--predict` the user ID to be estimated, for example, '1'. 
-* `--output` The output directory for the prediction results, default '/Data_davis_predict'.
+* `--output` The output directory for the prediction results, default '**/processed_data/Data_davis_predict**'.
 
-**processed_data** 
+
 
 **Pre-trained_models**: DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
 
