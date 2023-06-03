@@ -27,10 +27,10 @@ The repository includes an introduction to EV-Eye **Dataset organization** and h
 
 ## Dataset organization
 
-You can download the **dataset** from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw](https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw), the **dataset** consisting of **raw_data** and **processed_data**. The **raw_data** includes three folders, i.e., **Data_davis**, **Data_davis_labelled_with_mask** and **Data_tobii** which will be described in detail in the following. As for the **processed data** it is the data/results processed by our Python and Matlab code, it will be described in the **Running the benchmark** section.
+You can download the **EV_Eye_dataset** from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw](https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw), the **EV_Eye_dataset** consisting of **raw_data** and **processed_data**. The **raw_data** includes three folders, i.e., **Data_davis**, **Data_davis_labelled_with_mask** and **Data_tobii** which will be described in detail in the following. As for the **processed data** it is the data/results processed by our Python and Matlab code, it will be described in the **Running the benchmark** section.
 
 
-**Data_davis**: Including near-eye gryscale images in **frames** folder in and event streams in **events** folder captured by two sets of DAVIS346 event cameras for **left** and **right** eyes. Each user participates four sessions of data collection, the first two session capture both saccade and fixation states of the eye movement, the last two sessions record eye movement in smooth pursuit. We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html) to label the pupil region of 9,011 near-eye images selected uniformly across the image dataset, annotation results are recorded in excel tables in the last three sessions, e.g., **raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv**. The **creation_time.txt** file records the system time of the computer when DAVIS346 started collecting.
+**Data_davis**: Including near-eye gryscale images in **frames** folder in and event streams in **events** folder captured by two sets of DAVIS346 event cameras for **left** and **right** eyes. Each user participates four sessions of data collection, the first two session capture both saccade and fixation states of the eye movement, the last two sessions record eye movement in smooth pursuit. We leverage the VGG Image Annotator on the [https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html](https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html) to label the pupil region of 9,011 near-eye images selected uniformly across the image dataset, annotation results are recorded in excel tables in the last three sessions, e.g., **/EV_Eye_dataset/raw_data/Data_davis/user1/left/session_1_0_1/user_1.csv**. The **creation_time.txt** file records the system time of the computer when DAVIS346 started collecting.
   ```
   ─Data_davis
   ├─user1
@@ -54,7 +54,7 @@ You can download the **dataset** from [https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45
   │  └─right
   │      ..........
   ```
-**Data_davis_labelled_with_mask**: Using the code in ``/matlab_processed/generate_pupil_mask.m`` to generate binarized masks with annotation results , i.e., the excel tables in **raw_data/Data_davis**, the results are saved as hdf5 files, which are then used for training the DL-based pupil segmentation network.
+**Data_davis_labelled_with_mask**: Using the code in ``/matlab_processed/generate_pupil_mask.m`` to generate binarized masks with annotation results , i.e., the excel tables in **/EV_Eye_dataset/raw_data/Data_davis**, the results are saved as hdf5 files, which are then used for training the DL-based pupil segmentation network.
   ```
   ─Data_davis_labelled_with_mask
   ├─left
@@ -111,7 +111,7 @@ To install requirements:
 pip install -r requirements.txt
 ```
 #### Download Dataset
-Download the **raw_data** and **processed_data** folders to the **'/dataset'** folder and run 
+Download the **raw_data** and **processed_data** folders to the **'/EV_Eye_dataset'** folder and run : 
 ```
 cd /path/dataset #choose your own path
 
@@ -141,13 +141,14 @@ python predict.py
 Optional arguments can be passed :
 * `--direction` direction of dataset to be used,such as 'L' or 'R'.
 * `--predict` the user ID to be estimated, for example, '1'. 
-* `--output` The output directory for the prediction results, default '**/dataset/processed_data/Data_davis_predict**'.
-
-
+* `--output` The output directory for the prediction results, default '**/EV_Eye_dataset/processed_data/Data_davis_predict**'.
+#### Pre-trained_models
 
 **Pre-trained_models**: DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
 
 **Data_davis_predict**: Binarized masks of 48 participants that extract the pupil area out of the background using pre-trained_models.
+
+
 ### Matlab
 ##### Installation
 ```angular2html
@@ -163,7 +164,7 @@ matlab -batch "pkg install -forge curvefit"
 **Pixel_error_evaluation**:  Using the code in ``/matlab_processed/pe_of_frame_based_pupil_track.m`` and ``/matlab_processed/pe_of_event_based_pupil_track.m`` to estimated Euclidean distance in pixels between the estimated and groundtruth pupil centers.
 
 
-``/matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m`` to  estimate Difference of direction (DoD) in gaze tracking
+``/matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m`` to estimate Difference of direction (DoD) in gaze tracking
 
 
 
