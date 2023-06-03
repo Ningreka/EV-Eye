@@ -119,6 +119,20 @@ cd /path/dataset #choose your own path
 
 find . -mindepth 1 -maxdepth 3 -name '*.rar' -execdir unrar x {} \; -execdir mv {} ./ \;
 ```
+Please place the downloaded data in the **/EV_Eye_dataset** directory and arrange it according to the following path.
+```angular2html
+  /EV_Eye_dataset
+  ├─ raw_data 
+  │  ├─Data_davis
+  │  ├─Data_davis_labelled_with_mask
+  │  ├─Data_tobii
+  ├─ processed_data 
+  │  ├─Data_davis_predict
+  │  ├─Frame_event_pupil_track_result
+  │  ├─Pixel_error_evaluation
+  │  ├─Pre-trained
+
+```
 
 #### Training
 

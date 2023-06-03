@@ -53,7 +53,7 @@ def evaluate(net, dataloader, device):
 
 
 def iou_mean(pred, target, n_classes=1):
-    # n_classes ：the number of classes in your dataset,not including background
+    # n_classes ：the number of classes in your EV_Eye_dataset,not including background
     # for mask and ground-truth label, not probability map
     ious = []
     iousSum = 0

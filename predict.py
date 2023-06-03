@@ -99,7 +99,7 @@ if __name__ == '__main__':
         whicheye = 'right'
     orders = ['1_0_1', '1_0_2', '2_0_1', '2_0_2']
     for order in orders:
-        origin_data_dir = args.data_dir + '/dataset/raw_data/Data_davis/user' + str(
+        origin_data_dir = args.data_dir + '/EV_Eye_dataset/raw_data/Data_davis/user' + str(
             user) + whicheye + '/session_' + order + '/events/'
 
         assert os.path.exists(origin_data_dir), " please check your data directory:" + origin_data_dir
@@ -109,7 +109,7 @@ if __name__ == '__main__':
         paths = glob.glob(os.path.join(origin_data_dir, 'frames/', '*.png'))
         origin_paths.extend(paths)
 
-        # target_data_dir = args.data_dir + '/dataset/processed_data/Data_davis_predict/user' + str(
+        # target_data_dir = args.data_dir + '/EV_Eye_dataset/processed_data/Data_davis_predict/user' + str(
         #     user) + whicheye + '/session_' + order
 
         output_dir = args.output_dir + '/Data_davis_predict/' + str(user) + whicheye + '/session' + order + "/"
