@@ -1,5 +1,4 @@
-# Ev-eye dataset processing
-We use matlab to process raw data.
+# Ev-eye dataset processing in matlab
 
 ## Installation
 ```angular2html
