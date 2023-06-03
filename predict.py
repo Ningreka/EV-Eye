@@ -68,7 +68,7 @@ def get_args():
     parser.add_argument('--predict', type=str, default='1')
 
     parser.add_argument('--data_dir', type=str, default=os.getcwd())
-    parser.add_argument('--direction', type=str, default="right")
+    parser.add_argument('--whicheye', type=str, default="right")
     parser.add_argument('--device', type=str, default='cpu', help='Device to run the program on (cpu / cuda)')
     return parser.parse_args()
 
@@ -112,7 +112,7 @@ if __name__ == '__main__':
         # target_data_dir = args.data_dir + '/dataset/processed_data/Data_davis_predict/user' + str(
         #     user) + direction + '/session_' + order
 
-        output_dir = args.output_dir + '/predict_results' + str(user) + direction + '/session' + order + "/"
+        output_dir = args.output_dir + '/Data_davis_predict/' + str(user) + whicheye + '/session' + order + "/"
 
         assert os.path.exists(origin_data_dir), "please check your data directory:" + origin_data_dir
 
