@@ -92,24 +92,6 @@ Four metrics are adopted for the dataset evaluation, namely **IoU and F1 score**
 The **IoU and F1 score** are used to evaluate pupil region segmentation, we use pytorch framework in Python to train and evaluate our DL-based Pupil Segmentation network.
 The **PE of frame-based pupil segmentation**, **PE of event-based pupil tracking**, **Difference of direction** in gaze tracking implemented through Matlab code.
  
-### Python
-Note: please use Python >= 3.6.0
-#### Requirements
-
-```
-torch>=1.9.0
-numpy>=1.21.0
-tqdm>=4.61.1
-h5py>=3.2.1
-torchvision>=0.10.0
-argparse>=1.1
-```
-
-To install requirements:
-
-```angular2html
-pip install -r requirements.txt
-```
 #### Download Dataset
 Download the **raw_data** and **processed_data** folders to the **'/EV_Eye_dataset'** folder and run : 
 ```
@@ -132,6 +114,26 @@ Please place the downloaded data in the **/EV_Eye_dataset** directory and arrang
   │  ├─Pixel_error_evaluation
   │  ├─Pre-trained
 
+```
+ 
+ 
+### Python
+Note: please use Python >= 3.6.0
+#### Requirements
+
+```
+torch>=1.9.0
+numpy>=1.21.0
+tqdm>=4.61.1
+h5py>=3.2.1
+torchvision>=0.10.0
+argparse>=1.1
+```
+
+To install requirements:
+
+```angular2html
+pip install -r requirements.txt
 ```
 
 #### Training
