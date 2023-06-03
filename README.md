@@ -134,10 +134,10 @@ Optional arguments can be passed :
 * `--batch_size ` Batch size to use for training.
 
 #### Evaluation
+The following code provides the calculation method of iou and f1 score:
 ```
-evaluate.py provides methods to calculate IoU and F1 score.
+evaluate.py 
 ```
-
 #### Predict
 
 ```angular2html
@@ -146,7 +146,7 @@ python predict.py
 Optional arguments can be passed :
 * `--direction` direction of dataset to be used,such as 'L' or 'R'.
 * `--predict` the user ID to be estimated, for example, '1'. 
-* `--output` The output directory for the prediction results, default '**/EV_Eye_dataset/processed_data/Data_davis_predict**'.
+* `--output` the output directory for the prediction results, default'**/EV_Eye_dataset/processed_data/Data_davis_predict**'.
 
 
 #### Pre-trained_models
@@ -165,7 +165,7 @@ matlab -batch "pkg install -forge curvefit"
 
 **processed_data** 
 
-
+You can run it from scratch, or use our saved calculations,
 **Frame_event_pupil_track_result**: Using the code in ``/matlab_processed/frame_event_pupil_track.m`` to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization code is in ``/matlab_processed/frame_event_pupil_track_plot.m``. 
 
 **Pixel_error_evaluation**:  Using the code in ``/matlab_processed/pe_of_frame_based_pupil_track.m`` and ``/matlab_processed/pe_of_event_based_pupil_track.m`` to estimated Euclidean distance in pixels between the estimated and groundtruth pupil centers.
