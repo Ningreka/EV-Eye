@@ -151,7 +151,7 @@ Optional arguments can be passed :
 
 #### Pre-trained_models
 
-**Pre-trained_models**: DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
+you can find Pre-trained_models in **/EV_Eye_dataset/processed_data/Pre-trained_models** it contains DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
 
 **Data_davis_predict**: Binarized masks of 48 participants that extract the pupil area out of the background using pre-trained_models.
 
