@@ -88,9 +88,9 @@ To access more information about the data curation process and data characterist
 
 
 ## **Running the benchmark**
-Four metrics are adopted for the dataset evaluation, namely **IoU and F1 score**, **Pixel error (PE) of frame-based pupil segmentation**, **PE of event-based pupil tracking**, **Difference of direction (DoD)** in gaze tracking. 
+Four metrics are adopted for the dataset evaluation, namely **IoU and F1 score**, **Pixel error (PE) of frame-based pupil segmentation**, **PE of event-based pupil tracking**, **Difference of direction (DoD) in gaze tracking**. 
 The **IoU and F1 score** are used to evaluate pupil region segmentation, we use pytorch framework in Python to train and evaluate our DL-based Pupil Segmentation network.
-The **PE of frame-based pupil segmentation**, **PE of event-based pupil tracking**, **Difference of direction** in gaze tracking implemented through Matlab code.
+The **PE of frame-based pupil segmentation**, **PE of event-based pupil tracking**, **DoD in gaze tracking** implemented through Matlab code.
  
 #### Download Dataset
 Download the **raw_data** and **processed_data** folders to the **'/EV_Eye_dataset'** folder and run : 
