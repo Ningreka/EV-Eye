@@ -92,15 +92,15 @@ if __name__ == '__main__':
     device = args.device
     userlist = [u for u in range(1, 49)]
     user = args.user
-    direction = 'right'
-    if args.direction == 'L':
-        direction = 'left'
-    if args.direction == 'R':
-        direction = 'right'
+    whicheye = 'right'
+    if args.whicheye == 'L':
+        whicheye = 'left'
+    if args.whicheye == 'R':
+        whicheye = 'right'
     orders = ['1_0_1', '1_0_2', '2_0_1', '2_0_2']
     for order in orders:
         origin_data_dir = args.data_dir + '/dataset/raw_data/Data_davis/user' + str(
-            user) + direction + '/session_' + order + '/events/'
+            user) + whicheye + '/session_' + order + '/events/'
 
         assert os.path.exists(origin_data_dir), " please check your data directory:" + origin_data_dir
 
@@ -110,7 +110,7 @@ if __name__ == '__main__':
         origin_paths.extend(paths)
 
         # target_data_dir = args.data_dir + '/dataset/processed_data/Data_davis_predict/user' + str(
-        #     user) + direction + '/session_' + order
+        #     user) + whicheye + '/session_' + order
 
         output_dir = args.output_dir + '/Data_davis_predict/' + str(user) + whicheye + '/session' + order + "/"
 
@@ -125,7 +125,7 @@ if __name__ == '__main__':
         logging.info(f'Loading model {args.model}')
         logging.info(f'Using device {device}')
         net.to(device=device)
-        model_dir = args.data_dir + '/' + direction + '_checkpoints/user' + str(
+        model_dir = args.data_dir + '/' + whicheye + '/user' + str(
             user) + '.pth'
         net.load_state_dict(torch.load(model_dir, map_location=device))
 
