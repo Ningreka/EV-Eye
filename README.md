@@ -89,7 +89,7 @@ To access more information about the data curation process and data characterist
 
 ## **Running the benchmark**
 Four metrics are adopted for the dataset evaluation, namely **IoU and F1 score**, **Pixel error (PE) of frame-based pupil segmentation**, **PE of event-based pupil tracking**, **Difference of direction (DoD) in gaze tracking**. 
-The **IoU and F1 score** are used to evaluate pupil region segmentation task, we use pytorch framework in Python to train and evaluate our DL-based Pupil Segmentation network.
+The **IoU and F1 score** are used to evaluate pupil region segmentation task, and we use pytorch framework in Python to train and evaluate our DL-based Pupil Segmentation network.
 The **PE of frame-based pupil segmentation**, **PE of event-based pupil tracking**, **DoD in gaze tracking** implemented through Matlab code.
  
 #### Download Dataset
@@ -154,6 +154,7 @@ The following code provides the calculation method of **IoU and F1 score**:
 ```
 evaluate.py 
 ```
+
 #### Predict
 
 ```angular2html
@@ -182,7 +183,7 @@ Then you can plot the results as bar charts using code ``/matlab_processed/plot_
 ##### **DoD in gaze tracking**
 Using the code in ``/matlab_processed/frame_event_pupil_track.m`` to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization demo is in ``/matlab_processed/frame_event_pupil_track_plot.m``, the results are saved in **/EV_Eye_dataset/processed_data/Frame_event_pupil_track_result**.
 
-Using the code in ``/matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m`` to have the frame&event-based pupil tracking estimated results in **/EV_Eye_dataset/processed_data/Frame_event_pupil_track_result** correspond to the reference provided by the Tobii Pro Glasses 3 in  **/EV_Eye_dataset/raw_data/Data_tobii**  and then using the code in ``/matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m`` to estimate the difference between the estimated and reference gaze directions.
+Using the code in ``/matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m`` to have the frame&event-based pupil tracking estimated results in **/EV_Eye_dataset/processed_data/Frame_event_pupil_track_result** correspond to the reference provided by the Tobii Pro Glasses 3 in  **/EV_Eye_dataset/raw_data/Data_tobii**  and then using the code in ``/matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m`` to estimate the difference between the estimated and reference gaze directions. You can display the results as a bar chart using code ``/matlab_processed/plot_gaze_tracking_dod.m`` 
 
 
 
