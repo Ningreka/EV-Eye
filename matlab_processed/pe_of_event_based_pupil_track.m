@@ -6,7 +6,7 @@ rawfilepath = input('Enter raw_data location(such as /home/EV_Eye_dataset/raw_da
 processedpath = input('Enter processed_data location(such as /home/EV_Eye_dataset/processed_data): ', 's');
 outputFile = input('Enter output result location (if you press enter directly, the default path is ./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame):','s');
 session_pattern_list = [1,2;2,1;2,2];  % select pattern and session with label
-for user_num = 1:1 %(user_num = 1:48)
+for user_num = 1:48 %(user_num = 1:48)
     for session_pattern = 1:1
         session = session_pattern_list(session_pattern,1);
         pattern = session_pattern_list(session_pattern,2);
@@ -160,9 +160,9 @@ for user_num = 1:1 %(user_num = 1:48)
         matcell = [event_pixel_error_list]';
         mean(event_pixel_error_list);
         if isempty(outputFile)
-            save([processedpath ,'\Pixel_error_evaluation\event\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
+            save([processedpath ,'\Pixel_error_evaluation\event\',whicheye,'\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
         else
-            outfile  = strcat(outputFile,'\Pixel_error_evaluation_event\',whicheye);
+            outfile  = strcat(outputFile,'\Pixel_error_evaluation\event\',whicheye);
             if exist(outfile, 'dir')
                 disp('save results to'+outfile);
                 save([outfile ,'\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');

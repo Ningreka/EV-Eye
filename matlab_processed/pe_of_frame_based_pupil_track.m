@@ -10,7 +10,7 @@ outputFile = input('Enter output result location:','s');
 % whicheye = 'left'; % select which eye to generate mask
 % mkdir(['H:\processed_data\Pixel_error_evaluation\frame\',whicheye,'\']);
 session_pattern_list = [1,2;2,1;2,2];  % select pattern and session with label
-for user_num =  1:1  %(user_num = 1:48)
+for user_num =  1:48  %(user_num = 1:48)
     for session_pattern = 1:3
         session = session_pattern_list(session_pattern,1);
         pattern = session_pattern_list(session_pattern,2);
@@ -98,7 +98,7 @@ for user_num =  1:1  %(user_num = 1:48)
        if isempty(outputFile)
             save([processedpath ,'\Pixel_error_evaluation\frame\',whicheye,'\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
         else
-            outfile  = strcat(outputFile,'\Pixel_error_evaluation_frame\',whicheye);
+            outfile  = strcat(outputFile,'\Pixel_error_evaluation\frame\',whicheye);
             if exist(outfile, 'dir')
                 disp('save results to '+outfile);
                 save([outfile ,'\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
