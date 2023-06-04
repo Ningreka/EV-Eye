@@ -216,14 +216,18 @@ matlab -batch "pkg install -forge curvefit"
 ```
 
 #### PE of frame-based pupil segmentation & PE of event-based pupil tracking
-Using the code in `./matlab_processed/pe_of_frame_based_pupil_track.m` and `./matlab_processed/pe_of_event_based_pupil_track.m` to estimated Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, the results will by default be saved in `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame` and `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event`, respectively. You can also find the results that we getted before in those folders.
+- `./matlab_processed/pe_of_frame_based_pupil_track.m` and `./matlab_processed/pe_of_event_based_pupil_track.m` : estimated Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, the results will by default be saved in **./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame** and **./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event**, respectively. You can also find the results that we getted before in those folders.
 
-Then you can plot the results as bar charts using code `./matlab_processed/plot_bar_frame_pe.m` and code `./matlab_processed/plot_bar_event_pe.m`, respectively.
+- `./matlab_processed/plot_bar_frame_pe.m` and `./matlab_processed/plot_bar_event_pe.m` : plot the results as bar charts , respectively.
 
 #### DoD in gaze tracking
-Using the code in `./matlab_processed/frame_event_pupil_track.m` to obtain frame&event-based pupil tracking results for 48 participants, and a corresponding visualization demo is in `./matlab_processed/frame_event_pupil_track_plot.m`, the results will by default be saved in    `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we getted before in that folder.
+- `./matlab_processed/frame_event_pupil_track.m` : obtain frame&event-based pupil tracking results for 48 participants.
+- `./matlab_processed/frame_event_pupil_track_plot.m`:a corresponding visualization demo , the results will by default be saved in  **./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result**. You can also find the results that we getted before in that folder.
 
-Using the code in `./matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m` to get the frame&event-based pupil tracking estimated results in `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result` correspond to the reference provided by the **Tobii Pro Glasses 3** in  `./EV_Eye_dataset/raw_data/Data_tobii`  and then using the code in `./matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m` to estimate the difference between the estimated and reference gaze directions. You can display the results as a bar chart using code `./matlab_processed/plot_gaze_tracking_dod.m`.
+- `./matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m` : get the frame&event-based pupil tracking estimated results in **./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result** correspond to the reference provided by the **Tobii Pro Glasses 3** in  **./EV_Eye_dataset/raw_data/Data_tobii**
+- `./matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m` : estimate the difference between the estimated and reference gaze directions. 
+<br/>
+You can display the results as a bar chart using code `./matlab_processed/plot_gaze_tracking_dod.m`.
 
 
 

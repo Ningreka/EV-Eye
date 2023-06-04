@@ -5,6 +5,8 @@ close all
 whicheye = input('Please enter left or right to choose eye: ','s')
 rawfilepath = input('Enter raw_data location(such as /home/raw_data): ', 's');
 processedpath = input('Enter processed_data location(such as /home/processed_data): ', 's');
+outputFile = input('Enter output result location:','s');
+
 % whicheye = 'left'; % select which eye to generate mask
 % mkdir(['H:\processed_data\Pixel_error_evaluation\frame\',whicheye,'\']);
 session_pattern_list = [1,2;2,1;2,2];  % select pattern and session with label
@@ -93,7 +95,22 @@ for user_num =  1:1  %(user_num = 1:48)
         
         matcell = [frame_pixel_error_list]';
         mean(matcell)
-%         save(['H:\processed_data\Pixel_error_evaluation\frame\',whicheye,'\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
+       if isempty(outputFile)
+            save([processedpath ,'\Pixel_error_evaluation\frame\',whicheye,'\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
+        else
+            outfile  = strcat(outputFile,'\Pixel_error_evaluation_frame\',whicheye);
+            if exist(outfile, 'dir')
+                disp('save results to '+outfile);
+                save([outfile ,'\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
+
+            else
+                mkdir(outfile);
+                disp('The folder'+outfile+'has been created.');
+                save([outfile ,'\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
+            end
+        end
+
+%       save(['H:\processed_data\Pixel_error_evaluation\frame\',whicheye,'\user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
         clearvars -except user_num  session  pattern whicheye session_pattern_list
         
     end

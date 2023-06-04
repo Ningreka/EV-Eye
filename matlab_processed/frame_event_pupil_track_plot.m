@@ -200,7 +200,7 @@ for user_num = 3:3 %user(1-48)
                 % Save update results
                 matcell = [timeinterval_list;pixel_num_list;temp_timestamp_list ;temp_x_list ;temp_y_list; frame_or_event ]';
                 % save(['E:\update_result\our_methods\0.7\',whicheye,'\kmeans_update_20_point_user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat'], 'matcell');
-                
+
                 clearvars -except user_num  session  pattern
                 
                 
