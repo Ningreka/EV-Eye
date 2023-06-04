@@ -116,8 +116,6 @@ The masks are saved in hdf5 files, which are then used for training the DL-based
 --------------------
 
 #### 4. Data_davis_pupil_iris_label
-包含了对data Davis中每个session中一段连续时间图片的标注，除了瞳孔区域还标注了虹膜区域。具体标注的时间段由。。。给出
-标注信息按照左右眼和四个session划分，每个session文件夹中都包含了对不同参与者相同眼睛在相同session中的标注
 
 **Data_davis_pupil_iris_label** includes labels of pupil and iris region for frames in a continuous period in each session. The labeld period of each session is recorded by `label_statistic.xlsx`. And the statistic also notes the state of eyes during that period, such as blink and moving direction.
 
