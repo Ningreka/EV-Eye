@@ -4,7 +4,7 @@ close all
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%left pixel_error_each_user %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-processedpath = input('Enter processed_data location(such as /home/processed_data): ', 's');
+processedpath = input('Enter processed_data location(such as /home/EV_Eye_dataset/processed_data) to use Pixel_error_evaluation: ', 's');
 session_2_0_1_list = [];
 for user_num = 1:48
     

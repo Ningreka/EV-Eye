@@ -48,6 +48,7 @@ def train_net(
         direction: str = 'right',
         data_dir: str = os.getcwd()
 
+
 ):
     if direction == 'L':
         direction = 'left'
@@ -168,7 +169,6 @@ def train_net(
                 epoch_loss = 0
                 with tqdm(total=n_train, desc=f'Epoch {epoch}/{epochs}', unit='img') as pbar:
                     for batch in train_loader:
-
                         images, true_masks = batch
                         torch.set_printoptions(profile="full")
 
@@ -238,7 +238,6 @@ def get_args():
     parser.add_argument('--direction', '-d', type=str, default="right")
     parser.add_argument('--data_dir', type=str,
                         default=os.getcwd())
-
     return parser.parse_args()
 
 

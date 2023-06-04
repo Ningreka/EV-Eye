@@ -116,8 +116,6 @@ The masks are saved in hdf5 files, which are then used for training the DL-based
 --------------------
 
 #### 4. Data_davis_pupil_iris_label
-包含了对data Davis中每个session中一段连续时间图片的标注，除了瞳孔区域还标注了虹膜区域。具体标注的时间段由。。。给出
-标注信息按照左右眼和四个session划分，每个session文件夹中都包含了对不同参与者相同眼睛在相同session中的标注
 
 **Data_davis_pupil_iris_label** includes labels of pupil and iris region for frames in a continuous period in each session. The labeld period of each session is recorded by `label_statistic.xlsx`. And the statistic also notes the state of eyes during that period, such as blink and moving direction.
 
@@ -243,14 +241,36 @@ matlab -batch "pkg install -forge curvefit"
 ```
 
 #### PE of frame-based pupil segmentation & PE of event-based pupil tracking
-Using the code in `./matlab_processed/pe_of_frame_based_pupil_track.m` and `./matlab_processed/pe_of_event_based_pupil_track.m` to estimated Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, the results will by default be saved in `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame` and `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event`, respectively. You can also find the results that we getted before in those folders.
+Run following codes to estimated Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, the results will by default be saved in **./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame** and **./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event**, respectively. You can also find the results that we getted before in those folders.
+```
+./matlab_processed/pe_of_frame_based_pupil_track.m
+./matlab_processed/pe_of_event_based_pupil_track.m
 
-Then you can plot the results as bar charts using code `./matlab_processed/plot_bar_frame_pe.m` and code `./matlab_processed/plot_bar_event_pe.m`, respectively.
+#plot the results as bar charts
+./matlab_processed/plot_bar_frame_pe.m
+./matlab_processed/plot_bar_event_pe.m
+``` 
 
 #### DoD in gaze tracking
-Using the code in `./matlab_processed/frame_event_pupil_track.m` to obtain frame&event-based pupil tracking results for 48 participants, and a corresponding visualization demo is in `./matlab_processed/frame_event_pupil_track_plot.m`, the results will by default be saved in    `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we getted before in that folder.
+The following code shows how to obtain frame&event-based pupil tracking results for 48 participants.
+```
+./matlab_processed/frame_event_pupil_track.m
+```
+A corresponding visualization demo , the results will by default be saved in  **./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result**. You can also find the results that we getted before in that folder.
+```
+./matlab_processed/frame_event_pupil_track_plot.m
+```
+The following code shows how to get the frame&event-based pupil tracking estimated results in **./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result** correspond to the reference provided by the **Tobii Pro Glasses 3** in  **./EV_Eye_dataset/raw_data/Data_tobii**
+```
+./matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m
+```
+The following code shows how to estimate the difference between the estimated and reference gaze directions. 
+```
+./matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m
 
-Using the code in `./matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m` to get the frame&event-based pupil tracking estimated results in `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result` correspond to the reference provided by the **Tobii Pro Glasses 3** in  `./EV_Eye_dataset/raw_data/Data_tobii`  and then using the code in `./matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m` to estimate the difference between the estimated and reference gaze directions. You can display the results as a bar chart using code `./matlab_processed/plot_gaze_tracking_dod.m`.
+#visual 
+./matlab_processed/plot_gaze_tracking_dod.m
+```
 
 
 
