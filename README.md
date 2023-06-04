@@ -241,7 +241,7 @@ matlab -batch "pkg install -forge curvefit"
 ```
 
 #### PE of frame-based pupil segmentation & PE of event-based pupil tracking
-Run following codes to estimated Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, the results will by default be saved in **./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame** and **./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event**, respectively. You can also find the results that we getted before in those folders.
+Run following codes to estimated Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, the results will by default be saved in `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame` and `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event`, respectively. You can also find the results that we getted before in those folders.
 ```
 ./matlab_processed/pe_of_frame_based_pupil_track.m
 ./matlab_processed/pe_of_event_based_pupil_track.m
@@ -256,11 +256,11 @@ The following code shows how to obtain frame&event-based pupil tracking results 
 ```
 ./matlab_processed/frame_event_pupil_track.m
 ```
-A corresponding visualization demo , the results will by default be saved in  **./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result**. You can also find the results that we getted before in that folder.
+A corresponding visualization demo , the results will by default be saved in  `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we getted before in that folder.
 ```
 ./matlab_processed/frame_event_pupil_track_plot.m
 ```
-The following code shows how to get the frame&event-based pupil tracking estimated results in **./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result** correspond to the reference provided by the **Tobii Pro Glasses 3** in  **./EV_Eye_dataset/raw_data/Data_tobii**
+The following code shows how to get the frame&event-based pupil tracking estimated results in `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result` correspond to the reference provided by the **Tobii Pro Glasses 3** in  `./EV_Eye_dataset/raw_data/Data_tobii`
 ```
 ./matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m
 ```
