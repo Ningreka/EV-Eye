@@ -221,9 +221,8 @@ Using the code in `./matlab_processed/pe_of_frame_based_pupil_track.m` and `./ma
 Then you can plot the results as bar charts using code `./matlab_processed/plot_bar_frame_pe.m` and code `./matlab_processed/plot_bar_event_pe.m`, respectively.
 
 #### DoD in gaze tracking
-Using the code in `./matlab_processed/frame_event_pupil_track.m` to obtain frame&event-based pupil tracking results, i.e., Point of Gaze (PoG) for 48 participants, and a corresponding visualization demo is in `./matlab_processed/frame_event_pupil_track_plot.m`, the results will by default be saved in    `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we getted before in that folder.
+Using the code in `./matlab_processed/frame_event_pupil_track.m` to obtain frame&event-based pupil tracking results for 48 participants, and a corresponding visualization demo is in `./matlab_processed/frame_event_pupil_track_plot.m`, the results will by default be saved in    `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we getted before in that folder.
 
-##### Compare with Tobii Reference
 Using the code in `./matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m` to get the frame&event-based pupil tracking estimated results in `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result` correspond to the reference provided by the **Tobii Pro Glasses 3** in  `./EV_Eye_dataset/raw_data/Data_tobii`  and then using the code in `./matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m` to estimate the difference between the estimated and reference gaze directions. You can display the results as a bar chart using code `./matlab_processed/plot_gaze_tracking_dod.m`.
 
 
