@@ -249,6 +249,7 @@ Run the following codes to estimated the Euclidean distance in pixels between th
 
 #### DoD in gaze tracking
 We use the following matlab scripts to obtain **DoD in gaze tracking**.
+
 First, the following code shows how to obtain frame&event-based pupil tracking results for 48 participants. The results will be saved by default in folder `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we got before in that folder.
 ```
 ./matlab_processed/frame_event_pupil_track.m
