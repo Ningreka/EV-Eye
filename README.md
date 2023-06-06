@@ -159,7 +159,7 @@ cd /path/to/EV_Eye_dataset #choose your own path
 find . -mindepth 1 -maxdepth 3 -name '*.rar' -execdir unrar x {} \; -execdir mv {} ./ \;
 ```
 
-Please place the unziped data in the `/path/to/EV_Eye_dataset` directory and arrange it according to the following path.
+Please place the unzipped data in the `/path/to/EV_Eye_dataset` directory and arrange it according to the following path.
 
 ```angular2html
   EV_Eye_dataset
@@ -174,7 +174,7 @@ Please place the unziped data in the `/path/to/EV_Eye_dataset` directory and arr
   │  ├─Pre-trained
 ```
 
-By default, our code find the dataset in the `./EV_Eye_dataset` directory. So if you use the default settings, you need to download and unzip the dataset into `./EV_Eye_dataset`.
+<!-- By default, our code find the dataset in the `./EV_Eye_dataset` directory. So if you use the default settings, you need to download and unzip the dataset into `./EV_Eye_dataset`. -->
 
 ### Python
 Note: please use Python >= 3.6.0
