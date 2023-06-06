@@ -117,9 +117,9 @@ The masks are saved in hdf5 files, which are then used for training the DL-based
 
 #### 4. Data_davis_pupil_iris_label
 
-**Data_davis_pupil_iris_label** includes labels of pupil and iris region for frames in a continuous period in each session. The labeld period of each session is recorded by `label_statistic.xlsx`. And the statistic also notes the state of eyes during that period, such as blink and moving direction.
+**Data_davis_pupil_iris_label** includes labels of pupil and iris region for frames in a continuous period in each session. The labeled period for each session are recorded in `label_statistic.xlsx`,  the statistics in the file provide information about the state of the eyes during those periods, such as blink and moving direction.
 
-We leverage the [VGG Image Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html) to label the pupil region and iris region. The labels in the same image are indexed with `1` and `2` corresponding to pupil and iris region, respectively.
+We leverage the [VGG Image Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html) tool to label the pupil region and iris region. The labels in the same image are indexed with `1` and `2`, representing to pupil and iris region, respectively.
 
  ```
   ─Data_davis_pupil_iris_label
