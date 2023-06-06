@@ -206,8 +206,7 @@ python train.py
 
 Optional arguments can be passed :
 * `--whicheye` to choose which eye's data is used for training, such as 'L' or 'R'.
-* `--save_checkpoint` Whether to save the checkpoint or not,default mode is true.
-* `--batch_size ` Batch size to use for training.
+* `--batch_size ` 
 
 #### Evaluation
 The following code provides the calculation method of **IoU and F1 score**:
@@ -217,7 +216,6 @@ python evaluate.py
 ```
 
 #### Predict
-
 ```angular2html
 python predict.py
 ```
