@@ -99,7 +99,7 @@ The masks are saved in hdf5 files, which are then used for training the DL-based
 --------------------
 
 #### 3. Data_tobii
-**Data_tobii** includes the gaze references provided by **Tobii Pro Glasses 3**. The `tobiisend.txt` file records the system time of the computer when TTL signal is send to Tobii Pro Glasses 3, the `tobiittl.txt` records the TTL signal receiving time in the glasses internal clock. The detailed description about `gazedata`, `scenevideo`, `imudata` and `eventdata` can be find in: [https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form](https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form) 
+**Data_tobii** includes the gaze references provided by Tobii Pro Glasses 3. The `tobiisend.txt` file records the system time of the computer when TTL signal is send to Tobii Pro Glasses 3, the `tobiittl.txt` records the TTL signal receiving time in the glasses internal clock. The detailed description about `gazedata`, `scenevideo`, `imudata` and `eventdata` can be find in: [https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form](https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form) 
   ```
   -Data_tobii
   ├─ user1 
@@ -241,7 +241,7 @@ matlab -batch "pkg install -forge curvefit"
 ```
 
 #### PE of frame-based pupil segmentation & PE of event-based pupil tracking
-Run following codes to estimated Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, the results will by default be saved in `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame` and `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event`, respectively. You can also find the results that we getted before in those folders.
+Run the following codes to estimated the Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, and the results  will be saved by default in  `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame` and `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event`, respectively. You can also find the results that we getted before in those folders.
 ```
 ./matlab_processed/pe_of_frame_based_pupil_track.m
 ./matlab_processed/pe_of_event_based_pupil_track.m
@@ -260,7 +260,7 @@ A corresponding visualization demo , the results will by default be saved in  `.
 ```
 ./matlab_processed/frame_event_pupil_track_plot.m
 ```
-The following code shows how to get the frame&event-based pupil tracking estimated results in `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result` correspond to the reference provided by the **Tobii Pro Glasses 3** in  `./EV_Eye_dataset/raw_data/Data_tobii`
+The following code shows how to get the frame&event-based pupil tracking estimated results in `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result` correspond to the reference provided by the Tobii Pro Glasses 3 in  `./EV_Eye_dataset/raw_data/Data_tobii`
 ```
 ./matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m
 ```
