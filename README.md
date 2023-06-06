@@ -237,7 +237,7 @@ matlab -batch "pkg install -forge curvefit"
 ```
 
 #### PE of frame-based pupil segmentation & PE of event-based pupil tracking
-Run the following codes to estimated the Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, and the results  will be saved by default in  `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame` and `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event`, respectively. You can also find the results that we getted before in those folders.
+Run the following codes to estimated the Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, and the results  will be saved by default in  `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame` and `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event`, respectively. You can also find the results that we got before in those folders.
 ```
 ./matlab_processed/pe_of_frame_based_pupil_track.m
 ./matlab_processed/pe_of_event_based_pupil_track.m
