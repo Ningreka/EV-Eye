@@ -198,14 +198,14 @@ pip install -r requirements.txt
 
 #### Training
 
-To train the DL-based Pupil Segmentation network models in the paper, run this command:
+To train the DL-based Pupil Segmentation network models, run this command:
 
 ```
 python train.py 
 ```
 
 Optional arguments can be passed :
-* `--direction` direction of dataset to be used,such as 'L' or 'R'.
+* `--whicheye` to choose which eye's data is used for training, such as 'L' or 'R'.
 * `--save_checkpoint` Whether to save the checkpoint or not,default mode is true.
 * `--batch_size ` Batch size to use for training.
 
@@ -222,13 +222,13 @@ python evaluate.py
 python predict.py
 ```
 Optional arguments can be passed :
-* `--direction` direction of dataset to be used,such as 'L' or 'R'.
-* `--predict` the user ID to be estimated, for example, '1'. 
+* `--whicheye` to choose which eye's data is used  for prediction, such as 'L' or 'R'.
+* `--predict` the user ID , for example, '1'. 
 * `--output` the output directory for the prediction results, default`./EV_Eye_dataset/processed_data/Data_davis_predict`.
 
 #### Pre-trained models
 
-you can find Pre-trained_models in `./EV_Eye_dataset/processed_data/Pre-trained_models`, it contains DL-based Pupil Segmentation network pre-trained models trained using the left and right eyes of each of the 48 participants.
+you can find Pre-trained_models in `./EV_Eye_dataset/processed_data/Pre-trained_models`, it contains DL-based Pupil Segmentation network pre-trained models using the left and right eyes of each of the 48 participants.
 
 ### Matlab
 #### Install the Requirement
@@ -250,11 +250,11 @@ Run the following codes to estimated the Euclidean distance in pixels between th
 ``` 
 
 #### DoD in gaze tracking
-The following code shows how to obtain frame&event-based pupil tracking results for 48 participants.
+The following code shows how to obtain frame&event-based pupil tracking results for 48 participants. The results will be saved by default in `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we getted before in that folder.
 ```
 ./matlab_processed/frame_event_pupil_track.m
 ```
-A corresponding visualization demo , the results will by default be saved in  `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we getted before in that folder.
+A corresponding visualization demo , 
 ```
 ./matlab_processed/frame_event_pupil_track_plot.m
 ```
