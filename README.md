@@ -252,7 +252,7 @@ The following code shows how to obtain frame&event-based pupil tracking results 
 ```
 ./matlab_processed/frame_event_pupil_track.m
 ```
-A corresponding visualization demo , 
+A corresponding visual demonstration is as follows,
 ```
 ./matlab_processed/frame_event_pupil_track_plot.m
 ```
