@@ -249,7 +249,7 @@ Run the following codes to estimated the Euclidean distance in pixels between th
 
 #### DoD in gaze tracking
 We use the following matlab scripts to obtain **DoD in gaze tracking**.
-The following code shows how to obtain frame&event-based pupil tracking results for 48 participants. The results will be saved by default in folder `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we got before in that folder.
+First, the following code shows how to obtain frame&event-based pupil tracking results for 48 participants. The results will be saved by default in folder `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we got before in that folder.
 ```
 ./matlab_processed/frame_event_pupil_track.m
 ```
@@ -257,11 +257,11 @@ A corresponding visual demonstration is as follows,
 ```
 ./matlab_processed/frame_event_pupil_track_plot.m
 ```
-The following code shows how to get the frame&event-based pupil tracking estimated results in folder `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result` correspond to the reference provided by the Tobii Pro Glasses 3 in  `./EV_Eye_dataset/raw_data/Data_tobii`
+Second, the following code shows how to get the frame&event-based pupil tracking estimated results in folder `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result` correspond to the reference provided by the Tobii Pro Glasses 3 in  `./EV_Eye_dataset/raw_data/Data_tobii`
 ```
 ./matlab_processed/frame_event_pupil_track_result_find_tobii_reference.m
 ```
-The following code shows how to estimate the difference between the estimated and reference gaze directions. 
+Third, the following code shows how to estimate the difference between the estimated and reference gaze directions. 
 ```
 ./matlab_processed/evaluation_on_gaze_tracking_with_polynomial_regression.m
 
