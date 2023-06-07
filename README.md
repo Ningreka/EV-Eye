@@ -208,7 +208,7 @@ Optional arguments can be passed :
 * `--whicheye` to choose which eye's data is used for training, such as 'L' or 'R'.
 * `--batch_size ` 
 
-#### Evaluation
+#### Evaluation of **IoU and F1 score**
 The following code provides the calculation method of **IoU and F1 score**:
 
 ```
@@ -236,7 +236,7 @@ matlab -batch "pkg install -forge io"
 matlab -batch "pkg install -forge curvefit"
 ```
 
-#### PE of frame-based pupil segmentation & PE of event-based pupil tracking
+#### Evaluation of PE of frame-based pupil segmentation & PE of event-based pupil tracking
 Run the following codes to estimated the Euclidean distance in pixels between the estimated and manually marked groundtruth pupil centers, and the results  will be saved by default in folder `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/frame` and `./EV_Eye_dataset/processed_data/Pixel_error_evaluation/event`, respectively. You can also find the results that we got before in those folders.
 ```
 ./matlab_processed/pe_of_frame_based_pupil_track.m
@@ -247,7 +247,7 @@ Run the following codes to estimated the Euclidean distance in pixels between th
 ./matlab_processed/plot_bar_event_pe.m
 ``` 
 
-#### DoD in gaze tracking
+#### Evaluation of DoD in gaze tracking
 We use the following matlab scripts to obtain **DoD in gaze tracking**.
 
 First, the following code shows how to obtain frame&event-based pupil tracking results for 48 participants. The results will be saved by default in folder `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we got before in that folder.
