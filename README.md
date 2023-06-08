@@ -205,7 +205,7 @@ python train.py
 ```
 
 Optional arguments can be passed :
-* `--whicheye` to choose which eye's data is used for training, such as 'L' or 'R'.
+* `--whicheye`  to select which eye data to use for training, such as "L" or "R".
 * `--batch_size ` 
 
 #### Evaluation of **IoU and F1 score**
@@ -220,7 +220,7 @@ python evaluate.py
 python predict.py
 ```
 Optional arguments can be passed :
-* `--whicheye` to choose which eye's data is used  for prediction, such as 'L' or 'R'.
+* `--whicheye`  to select which eye data to use for prediction, such as "L" or "R".
 * `--predict` the user ID , for example, '1'. 
 * `--output` the output directory for the prediction results, default`./EV_Eye_dataset/processed_data/Data_davis_predict`.
 
