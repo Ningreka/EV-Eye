@@ -226,7 +226,7 @@ Optional arguments can be passed :
 
 #### Pre-trained models
 
-you can find Pre-trained_models in `./EV_Eye_dataset/processed_data/Pre-trained_models`, it contains DL-based Pupil Segmentation network pre-trained models using the left and right eyes of each of the 48 participants.
+you can find Pre-trained_models in `./EV_Eye_dataset/processed_data/Pre-trained_models`, it contains our DL-based Pupil Segmentation network pre-trained models using the left and right eyes of each of the 48 participants.
 
 ### Matlab
 #### Install the Requirement
@@ -250,7 +250,7 @@ Run the following codes to estimated the Euclidean distance in pixels between th
 #### Evaluation of DoD in gaze tracking
 We use the following matlab scripts to obtain **DoD in gaze tracking**.
 
-First, the following code shows how to obtain frame&event-based pupil tracking results for 48 participants. The results will be saved by default in folder `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`. You can also find the results that we got before in that folder.
+First, the following code shows how to obtain frame&event-based pupil tracking results for 48 participants. The results will be saved by default in folder `./EV_Eye_dataset/processed_data/Frame_event_pupil_track_result`, and you can also find the results that we got before in that folder.
 ```
 ./matlab_processed/frame_event_pupil_track.m
 ```
