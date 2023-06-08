@@ -77,7 +77,7 @@ We leverage the [VGG Image Annotator](https://www.robots.ox.ac.uk/~vgg/software/
 --------------------
 
 #### 2. Data_davis_labelled_with_mask
-**Data_davis_labelled_with_mask** offers the pre-generated binarized pupil masks according to the above-mentioned annotation results, i.e., the Excel tables in `/EV_Eye_dataset/raw_data/Data_davis`, using the code in `/matlab_processed/generate_pupil_mask.m`. 
+**Data_davis_labelled_with_mask** offers the pre-generated binarized pupil masks according to the above-mentioned annotation results, i.e., the Excel tables in `/EV_Eye_dataset/raw_data/Data_davis`. The code to generate masks can be found in `/matlab_processed/generate_pupil_mask.m`. 
 
 The masks are saved in hdf5 files, which are then used for training the DL-based pupil segmentation network.
   ```
@@ -97,7 +97,7 @@ The masks are saved in hdf5 files, which are then used for training the DL-based
 --------------------
 
 #### 3. Data_tobii
-**Data_tobii** includes the gaze references provided by Tobii Pro Glasses 3. The `tobiisend.txt` file records the system time of the computer when TTL signal is send to Tobii Pro Glasses 3, the `tobiittl.txt` records the TTL signal receiving time in the glasses internal clock. The detailed description about `gazedata`, `scenevideo`, `imudata` and `eventdata` can be find in: [https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form](https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form) 
+**Data_tobii** includes the gaze references provided by Tobii Pro Glasses 3. The detailed description about `gazedata`, `scenevideo`, `imudata` and `eventdata` can be find in: [https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form](https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3#form). The `tobiisend.txt` file records the system time of the computer when TTL signal is send to Tobii Pro Glasses 3, the `tobiittl.txt` records the TTL signal receiving time in the glasses internal clock. 
   ```
   -Data_tobii
   ├─ user1 
