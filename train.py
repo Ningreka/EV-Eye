@@ -28,7 +28,7 @@ import numpy as np
         save_checkpoint (bool): Whether to save the checkpoint or not
         img_scale (float): Scaling factor of the images
         use_amp (bool): Whether to use Automatic Mixed Precision or not
-        direction (str): Direction of EV_Eye_dataset to be used,such as left or right
+        whicheye (str): whicheye of EV_Eye_dataset to be used,such as left or right
 
     Returns:
         None
@@ -45,25 +45,25 @@ def train_net(
         save_checkpoint: bool = True,
         img_scale: float = 1,
         amp: bool = False,
-        direction: str = 'right',
+        whicheye: str = 'right',
         data_dir: str = os.getcwd()
 
 
 ):
-    if direction == 'L':
-        direction = 'left'
-    if direction == 'R':
-        direction = 'right'
-    save_checkpoint = data_dir+"/"+direction + '_checkpoints'
+    if whicheye == 'L':
+        whicheye = 'left'
+    if whicheye == 'R':
+        whicheye = 'right'
+    save_checkpoint = data_dir+"/"+whicheye + '_checkpoints'
 
     if not os.path.exists(save_checkpoint):
         os.makedirs(save_checkpoint)
 
     assert os.path.isdir( data_dir +'/EV_Eye_dataset/raw_data/Data_davis_labelled_with_mask/' ), data_dir+'/EV_Eye_dataset/raw_data/Data_davis_labelled_with_mask not exist, please download according to the guide.'
     # write results to checkpoint
-    dir_checkpoint = Path('./' + direction + '_checkpoints/')
+    dir_checkpoint = Path('./' + whicheye + '_checkpoints/')
     with open(os.path.join(
-            data_dir + "/"+direction + "_checkpoints/",
+            data_dir + "/"+whicheye + "_checkpoints/",
             f"ui_result.txt"), 'w') as outfiletotal:
         userlist = [u for u in range(1, 49)]
         orders = ["1_0_2", "2_0_1", "2_0_2"]
@@ -81,7 +81,7 @@ def train_net(
                 print(user_train)
                 for order in orders:
                     f = h5py.File(os.path.join(
-                        data_dir + '/EV_Eye_dataset/raw_data/Data_davis_labelled_with_mask/' + direction + '/user' + str(
+                        data_dir + '/EV_Eye_dataset/raw_data/Data_davis_labelled_with_mask/' + whicheye + '/user' + str(
                             user_train) + '_session_' + order + '.h5'), 'r')
                     # for key in f.keys():
                     #     print(f[key].name)
@@ -123,7 +123,7 @@ def train_net(
             for user_test in range(user, user + 1):
                 for order in orders:
                     f = h5py.File(os.path.join(
-                        data_dir + '/EV_Eye_dataset/raw_data/Data_davis_labelled_with_mask/'+direction + '/user' + str(
+                        data_dir + '/EV_Eye_dataset/raw_data/Data_davis_labelled_with_mask/'+whicheye + '/user' + str(
                             user_test) + '_session_' + order + '.h5'), 'r')  # 
 
                     print(((f['data'].value).T).shape)
@@ -235,7 +235,7 @@ def get_args():
     parser.add_argument('--amp', action='store_true', default=False, help='Use mixed precision')
     parser.add_argument('--bilinear', action='store_true', default=False, help='Use bilinear upsampling')
     parser.add_argument('--classes', '-c', type=int, default=2, help='Number of classes')
-    parser.add_argument('--direction', '-d', type=str, default="right")
+    parser.add_argument('--whicheye', '-d', type=str, default="right")
     parser.add_argument('--data_dir', type=str,
                         default=os.getcwd())
     return parser.parse_args()
@@ -257,7 +257,7 @@ if __name__ == '__main__':
             img_scale=args.scale,
             val_percent=args.val / 100,
             amp=args.amp,
-            direction=args.direction,
+            whicheye=args.whicheye,
             data_dir=args.data_dir,
         )
     except KeyboardInterrupt:
