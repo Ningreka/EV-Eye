@@ -19,7 +19,7 @@ EV-Eye proposes a novel hybrid frame-event eye tracking benchmarking approach ta
 <br/>
 
 ## Overview
-The repository includes an introduction to EV-Eye **Dataset organization** and how to **Running the benchmark** in Python and Matlab.
+The repository includes an introduction to EV-Eye **Dataset organization** and how to **Running the benchmark** in Python and Matlab.To obtain the original paper in PDF format, please contact the author via email: guangrong.zhao@sdu.edu.cn
 <!-- ## A quick Youtube demo for introduction
 [![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
  -->
