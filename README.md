@@ -321,10 +321,10 @@ If using this code-base and/or the EV-eye dataset in your paper, please cite the
 
 ```
 @inproceedings{,  
-  title={EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras},  
-  author={Guangrong Zhao, Yiran Shen, Yurun Yang, Jingwei Liu, Ning Chen, Hongkai Wen, Guohao Lan},
-  bootitl={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-  year={2023}  
+  title = {EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras},  
+  author = {Guangrong Zhao, Yiran Shen, Yurun Yang, Jingwei Liu, Ning Chen, Hongkai Wen, Guohao Lan},
+  booktitle = {Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+  year = {2023}  
 } 
 ```
 
