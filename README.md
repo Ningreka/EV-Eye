@@ -24,8 +24,7 @@ The repository includes an introduction to EV-Eye **Dataset organization** and h
 [![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
  -->
  
-## Citation
-
+<span style="font-size: larger;">Citation。</span>
 If you are using this dataset in your paper, please cite the following paper: 
 
 ```
@@ -36,6 +35,9 @@ If you are using this dataset in your paper, please cite the following paper:
   year = {2023}  
 } 
 ```
+
+
+
 ## Dataset Organization
 The EV-Eye dataset is a first-of-its-kind large scale multimodal eye tracking dataset, utilizing an emerging bio-inspired event camera to capture independent pixel-level intensity changes induced by eye movement, achieving submicrosecond latency. 
 
