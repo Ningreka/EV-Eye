@@ -24,7 +24,7 @@ The repository includes an introduction to EV-Eye **Dataset organization** and h
 [![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
  -->
  
-<span style="font-size: larger;">Citation。</span>
+## Citation
 If you are using this dataset in your paper, please cite the following paper: 
 
 ```
