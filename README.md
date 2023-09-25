@@ -23,7 +23,19 @@ The repository includes an introduction to EV-Eye **Dataset organization** and h
 <!-- ## A quick Youtube demo for introduction
 [![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
  -->
+ 
+## Citation
 
+If you are using this dataset in your paper, please cite the following paper: 
+
+```
+@inproceedings{  
+  title = {EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras},  
+  author = {Guangrong Zhao, Yiran Shen, Yurun Yang, Jingwei Liu, Ning Chen, Hongkai Wen, Guohao Lan},
+  booktitle = {Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track, New Orleans, USA},
+  year = {2023}  
+} 
+```
 ## Dataset Organization
 The EV-Eye dataset is a first-of-its-kind large scale multimodal eye tracking dataset, utilizing an emerging bio-inspired event camera to capture independent pixel-level intensity changes induced by eye movement, achieving submicrosecond latency. 
 
@@ -315,18 +327,6 @@ Third, the following code shows how to estimate the difference between the estim
 [//]: # ()
 [//]: # (<img src="pictures/distance.png" style="margin-left: 6px">)
 
-## Citation
-
-If you are using this dataset in your paper, please cite the following paper: 
-
-```
-@inproceedings{  
-  title = {EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras},  
-  author = {Guangrong Zhao, Yiran Shen, Yurun Yang, Jingwei Liu, Ning Chen, Hongkai Wen, Guohao Lan},
-  booktitle = {Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track, New Orleans, USA},
-  year = {2023}  
-} 
-```
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons
