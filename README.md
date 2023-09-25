@@ -1,4 +1,15 @@
 # EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras
+## Citation
+If you are using this dataset in your paper, please cite the following paper: 
+
+```
+@inproceedings{  
+  title = {EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras},  
+  author = {Guangrong Zhao, Yiran Shen, Yurun Yang, Jingwei Liu, Ning Chen, Hongkai Wen, Guohao Lan},
+  booktitle = {Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track, New Orleans, USA},
+  year = {2023}  
+} 
+```
 
 ## Introduction EV-Eye
 EV-Eye introduces the largest and most diverse multi-modal frame-event dataset for high frequency eye tracking in the literature. 
@@ -24,17 +35,6 @@ The repository includes an introduction to EV-Eye **Dataset organization** and h
 [![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
  -->
  
-## Citation
-If you are using this dataset in your paper, please cite the following paper: 
-
-```
-@inproceedings{  
-  title = {EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras},  
-  author = {Guangrong Zhao, Yiran Shen, Yurun Yang, Jingwei Liu, Ning Chen, Hongkai Wen, Guohao Lan},
-  booktitle = {Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track, New Orleans, USA},
-  year = {2023}  
-} 
-```
 
 
 
