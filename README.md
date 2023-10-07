@@ -50,7 +50,7 @@ Additionally, the dataset contains 675 thousands scene images and 2.7 million ga
 
 The **EV_Eye_dataset** consisting of `raw_data` and `processed_data`. 
 - The **raw_data** includes three folders, i.e., `Data_davis`, `Data_davis_labelled_with_mask` and `Data_tobii` which will be described in detail in the following. 
-  - We add a new folder `Data_davis_pupil_iris_label` to the **raw_data** directory for future work.
+- We add a new folder `Data_davis_pupil_iris_label` to the **raw_data** directory for future work.
 - The **processed data** is the data/results processed by our Python and Matlab code, it will be described in the **Running the benchmark** section.
 
 ### raw_data
