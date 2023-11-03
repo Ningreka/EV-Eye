@@ -1,6 +1,6 @@
 # EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras
 ## Citation
-**If you need the original paper in PDF format, please visit https://openreview.net/pdf?id=bmfMNIf1bU, as well as access to supplemental materials through https://openreview.net/attachment?id=bmfMNIf1bU&name=supplementary_material. If you are using this dataset in your paper, please cite the following paper** : 
+If you need the **original paper in PDF format**, please visit https://openreview.net/pdf?id=bmfMNIf1bU, as well as access to **supplemental materials** through https://openreview.net/attachment?id=bmfMNIf1bU&name=supplementary_material. If you are using this dataset in your paper, please **cite the following paper** : 
 
 ```
 @inproceedings{  
