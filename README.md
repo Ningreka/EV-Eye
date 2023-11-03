@@ -1,6 +1,6 @@
 # EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras
 ## Citation
-If you need the original paper in PDF format, please contact the author's email: guangrong.zhao@sdu.edu.cn. **If you are using this dataset in your paper, please cite the following paper** : 
+**If you need the original paper in PDF format, please contact the author's email: guangrong.zhao@sdu.edu.cn. If you are using this dataset in your paper, please cite the following paper** : 
 
 ```
 @inproceedings{  
