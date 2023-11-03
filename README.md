@@ -1,6 +1,6 @@
 # EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras
 ## Citation
-If you are using this dataset in your paper, please cite the following paper: 
+**If you need the original paper in PDF format, please contact the author's email: guangrong.zhao@sdu.edu.cn**. If you are using this dataset in your paper, please cite the following paper: 
 
 ```
 @inproceedings{  
@@ -31,7 +31,7 @@ EV-Eye proposes a novel hybrid frame-event eye tracking benchmarking approach ta
 The EV-Eye dataset can be found at: https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw.
 
 ## Overview
-The repository includes an introduction to EV-Eye **Dataset organization** and how to **Running the benchmark** in Python and Matlab. **If you need the original paper in PDF format, please contact the author's email: guangrong.zhao@sdu.edu.cn**
+The repository includes an introduction to EV-Eye **Dataset organization** and how to **Running the benchmark** in Python and Matlab. 
 <!-- ## A quick Youtube demo for introduction
 [![IMAGE_ALT](pictures/EV.png)](https://youtu.be/Yi03mFAyslU)
  -->
