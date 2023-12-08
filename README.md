@@ -5,7 +5,7 @@ If you need the **original paper in PDF format**, please visit: https://openrevi
 ```
 @inproceedings{  
   title = {EV-Eye: Rethinking High-frequency Eye Tracking through the Lenses of Event Cameras},  
-  author = {Guangrong Zhao, Yiran Shen, Yurun Yang, Jingwei Liu, Ning Chen, Hongkai Wen, Guohao Lan},
+  author = {Guangrong Zhao, Yurun Yang, Jingwei Liu, Ning Chen, Yiran Shen, Hongkai Wen, Guohao Lan},
   booktitle = {37th Conference on Neural Information Processing Systems Datasets and Benchmarks Track, New Orleans, USA},
   year = {2023}  
 } 
