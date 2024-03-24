@@ -28,7 +28,7 @@ EV-Eye proposes a novel hybrid frame-event eye tracking benchmarking approach ta
 [//]: # (![summary]&#40;pictures/main.jpg&#41;)
 
 <br/>
-The EV-Eye dataset can be found at: https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw.
+The EV-Eye dataset can be found at: https://1drv.ms/f/s!Ar4TcaawWPssqmu-0vJ45vYR3OHw. The alternative BaiduNetdisk link is: https://pan.baidu.com/s/1luJ84eXsaWNaed5FmKxXhA?pwd=evye, Extract code: evye
 
 ## Overview
 The repository includes an introduction to EV-Eye **Dataset organization** and how to **Running the benchmark** in Python and Matlab. 
