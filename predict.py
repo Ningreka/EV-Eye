@@ -69,6 +69,7 @@ def get_args():
 
     parser.add_argument('--data_dir', type=str, default=os.getcwd())
     parser.add_argument('--whicheye', type=str, default="right")
+    parser.add_argument('--user', type=str, default='1')
     parser.add_argument('--device', type=str, default='cpu', help='Device to run the program on (cpu / cuda)')
     return parser.parse_args()
 
