@@ -54,16 +54,16 @@ def train_net(
         whicheye = 'left'
     if whicheye == 'R':
         whicheye = 'right'
-    save_checkpoint = data_dir+"/"+whicheye + '_checkpoints'
+    save_checkpoint = data_dir+"/"+whicheye 
 
     if not os.path.exists(save_checkpoint):
         os.makedirs(save_checkpoint)
 
     assert os.path.isdir( data_dir +'/EV_Eye_dataset/raw_data/Data_davis_labelled_with_mask/' ), data_dir+'/EV_Eye_dataset/raw_data/Data_davis_labelled_with_mask not exist, please download according to the guide.'
     # write results to checkpoint
-    dir_checkpoint = Path('./' + whicheye + '_checkpoints/')
+    dir_checkpoint = Path('./' + whicheye + '/')
     with open(os.path.join(
-            data_dir + "/"+whicheye + "_checkpoints/",
+            data_dir + "/"+whicheye + "/",
             f"ui_result.txt"), 'w') as outfiletotal:
         userlist = [u for u in range(1, 49)]
         orders = ["1_0_2", "2_0_1", "2_0_2"]
