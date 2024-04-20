@@ -13,14 +13,14 @@ if isempty(dir(filepath))
      disp([filepath, '" does not exist.']);
 end
 for user_num = 1:1 %(user_num = 1:48)
-    for session = 1:1 %(session = 1:2)
-        for pattern = 1:1 %(pattern = 1:2)
-            load([filepath,'\Frame_event_pupil_track_result\',whicheye,'\update_20_point_with_reference_user',num2str(user_num),'_session_',num2str(session),'_0_',num2str(pattern),'.mat']);
-            frame_event_update_rate = matcell_with_label (:,5);
+    for session = 1:2 %(session = 1:2)
+        for pattern = 1:2 %(pattern = 1:2)
+            load([filepath,'/Frame_event_pupil_track_result/',whicheye,'/update_20_point_with_reference_user',num2str(user_num),'/session_',num2str(session),'_0_',num2str(pattern),'.mat']);
+            frame_event_update_rate = matcell_with_reference (:,5);
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Remove blink update results （frames&events）%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            frame_ind = find(matcell_with_label(:,5) == 1) ; 
-            frame_mat = matcell_with_label(frame_ind,:);
+            frame_ind = find(matcell_with_reference(:,5) == 1) ;
+            frame_mat = matcell_with_reference(frame_ind,:);
             threshold = 0.2*mean(frame_mat(:,1));     
             blink_ind = find(frame_mat(:,1)<threshold); %Find blink frame, blinking is considered when the number of pixels in the pupil area is too small
             
@@ -43,29 +43,29 @@ for user_num = 1:1 %(user_num = 1:48)
             end
           
             for jj = 1 : length(blink_end_timestamp) 
-                [blink_del,~] = find((blink_start_timestamp(jj)<=matcell_with_label(:,2))&(matcell_with_label(:,2)<=blink_end_timestamp(jj)));
-                matcell_with_label(blink_del,:) = [];
+                [blink_del,~] = find((blink_start_timestamp(jj)<=matcell_with_reference(:,2))&(matcell_with_reference(:,2)<=blink_end_timestamp(jj)));
+                matcell_with_reference(blink_del,:) = [];
             end
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Remove blink update results（frames&events）%%%%%%%%%%%%%%%%%%%%%%%
 
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Remove error reference %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %Remove update results where timestamp differs from tobii reference by more than 2ms
-            nearlabel = find(matcell_with_label(:,11)>2); 
-            matcell_with_label(nearlabel,:) = [];
+            nearlabel = find(matcell_with_reference(:,11)>2);
+            matcell_with_reference(nearlabel,:) = [];
             
             %Remove tobii reference with nan and 0 values
-            no_zero = find(((matcell_with_label(:,6))~=0)&(matcell_with_label(:,7)~=0)); 
-            matcell_with_label_no_zero_label  = matcell_with_label(no_zero,:);
-            no_nan = find(~isnan(matcell_with_label_no_zero_label (:, 4))); 
-            matcell_with_label_no_zero_label  = matcell_with_label_no_zero_label(no_nan ,:);
+            no_zero = find(((matcell_with_reference(:,6))~=0)&(matcell_with_reference(:,7)~=0));
+            matcell_with_reference_no_zero_label  = matcell_with_reference(no_zero,:);
+            no_nan = find(~isnan(matcell_with_reference_no_zero_label (:, 4)));
+            matcell_with_reference_no_zero_label  = matcell_with_reference_no_zero_label(no_nan ,:);
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Remove error reference %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             
 
             
             %A partial sample of frame-based updates result (66 point) was taken to calculate the polynomial coefficients 
-            frame_ind = find(matcell_with_label_no_zero_label (:,5) == 1) ; 
-            frame_mat = matcell_with_label_no_zero_label(frame_ind,:);  %Find results updated by frame
+            frame_ind = find(matcell_with_reference_no_zero_label (:,5) == 1) ;
+            frame_mat = matcell_with_reference_no_zero_label(frame_ind,:);  %Find results updated by frame
             train_tobii_reference_x_frame = frame_mat (:,6); % tobii reference for frame update results 
             train_tobii_reference_y_frame  = frame_mat (:,7); 
             train_pupil_centers_x_frame  = frame_mat  (:,3)/346; % normalisation of pupil centre coordinates
@@ -76,8 +76,8 @@ for user_num = 1:1 %(user_num = 1:48)
             fitsurface_x=fit([train_pupil_centers_x_frame(list_r),train_pupil_centers_y_frame(list_r)],train_tobii_reference_x_frame(list_r), 'poly53'); 
             fitsurface_y=fit([train_pupil_centers_x_frame(list_r),train_pupil_centers_y_frame(list_r)],train_tobii_reference_y_frame(list_r), 'poly53');
             % Find results updated by event
-            event_ind = find(matcell_with_label_no_zero_label (:,5) == 0);  
-            event_mat = matcell_with_label_no_zero_label (event_ind,:);
+            event_ind = find(matcell_with_reference_no_zero_label (:,5) == 0);
+            event_mat = matcell_with_reference_no_zero_label (event_ind,:);
             
             frame_mat(list_r,:)=[]; % Delete samples (66 point)  used to calculate polynomial coefficients
             test_tobii_reference_x_frame_del =  frame_mat (:,6);
@@ -100,10 +100,10 @@ for user_num = 1:1 %(user_num = 1:48)
             
             distance_list(end+1) = mean(distance);
             
-            fprintf('user_num: %f ,distance: %f\n',user_num,mean(distance));
+            fprintf('user_num: %d session: %d pattern: %d,distance: %f\n',user_num,session,pattern,mean(distance));
 
             pause(2);
-            clearvars -except user_num  session  pattern anglerror count_max_list distance_list distance_x distance_y whicheye
+            % clearvars -except user_num  session  pattern anglerror count_max_list distance_list distance_x distance_y whicheye
             
         end
     end
