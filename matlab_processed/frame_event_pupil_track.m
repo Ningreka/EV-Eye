@@ -76,7 +76,7 @@ for user_num = 1:1 %(user_num = 1:48)
                 for i = png_time_start_ind:1:length(png_time) - 200
                     
                     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Frame-based pupil centre update%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                    I = imread(cell2mat(fullfile(path_folder_predict,'predict\', names_file_predict(i)))); % Reading masks
+                    I = imread(cell2mat(fullfile(path_folder_predict,'\predict\', names_file_predict(i)))); % Reading masks
                     BW5=imclose(I,se); % Filling the infrared light reflection in the pupil with a morphological closure
                     % kmeans denoising
                     [aa,bb] = find(BW5 ==1);
